@@ -1,0 +1,866 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+    <dependencies>
+        <development version="4600" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CkF-SK-d6A" customClass="GradientButton">
+                                <rect key="frame" x="811" y="617" width="99" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9bW-fR-sty" kind="popover" identifier="popover" popoverAnchorView="CkF-SK-d6A" id="LTv-ex-jNK">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4nZ-qc-FLw" customClass="GradientButton">
+                                <rect key="frame" x="201" y="619" width="99" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ybL-GF-1i4" kind="popover" identifier="popover2" popoverAnchorView="4nZ-qc-FLw" id="wP7-cn-jFH">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0YT-vx-Tgp" customClass="GradientButton">
+                                <rect key="frame" x="630" y="668" width="81" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Play"/>
+                                <state key="highlighted" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setupMovie" destination="2" eventType="touchUpInside" id="LFw-gt-AbQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Xny-kW-1ex" customClass="GradientButton">
+                                <rect key="frame" x="20" y="669" width="81" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setupMovie2" destination="2" eventType="touchUpInside" id="2hz-Vo-qhV"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" id="HXs-Yx-R96">
+                                <rect key="frame" x="385" y="436" width="254" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.21176470589999999" green="0.55294117649999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.55828010949999995" green="0.55859375" blue="0.58049156020000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="alphaChannelSliderChanged:" destination="2" eventType="valueChanged" id="pCA-nB-Hej"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" id="IEL-e6-WRF">
+                                <rect key="frame" x="385" y="466" width="254" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.55828010949999995" green="0.55859375" blue="0.58049156020000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="volumeSliderAvplayer2Changed:" destination="2" eventType="valueChanged" id="hcK-Db-FYt"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c2B-KJ-eCF" customClass="GradientButton">
+                                <rect key="frame" x="175" y="670" width="59" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Mute">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muteVideoSx:" destination="2" eventType="touchUpInside" id="D7t-bn-7VT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9gy-QG-fEc" customClass="GradientButton">
+                                <rect key="frame" x="785" y="670" width="59" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Mute">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muteVideoDx:" destination="2" eventType="touchUpInside" id="TOU-mq-nc0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a3N-99-yAv" customClass="GradientButton">
+                                <rect key="frame" x="20" y="619" width="173" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add preloaded video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="DPA-95-lJs" kind="popover" identifier="popover4" popoverAnchorView="a3N-99-yAv" id="rsA-dY-aNo">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="emJ-IC-xDs" customClass="GradientButton">
+                                <rect key="frame" x="630" y="617" width="173" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add preloaded video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="PfO-l5-688" kind="popover" identifier="popover3" popoverAnchorView="emJ-IC-xDs" id="CeC-se-Rog">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lac-nT-8DH" customClass="GradientButton">
+                                <rect key="frame" x="852" y="670" width="58" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Loop">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playerItemmmDidReachEnd" destination="2" eventType="touchUpInside" id="7b8-PZ-MQW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P5q-55-YOr" customClass="GradientButton">
+                                <rect key="frame" x="719" y="670" width="58" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopMovie" destination="2" eventType="touchUpInside" id="7GB-1e-YHq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T6o-xk-vlr" customClass="GradientButton">
+                                <rect key="frame" x="109" y="670" width="58" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopMovie2" destination="2" eventType="touchUpInside" id="eRi-zp-kDB"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" id="k54-jM-aSO">
+                                <rect key="frame" x="18" y="589" width="366" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderRateVideo:" destination="2" eventType="valueChanged" id="Yu7-nD-UQP"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" id="c3P-nR-5v7">
+                                <rect key="frame" x="628" y="589" width="366" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderRateVideodx:" destination="2" eventType="valueChanged" id="ovi-0L-W5a"/>
+                                </connections>
+                            </slider>
+                            <containerView clipsSubviews="YES" contentMode="scaleToFill" id="Ulu-1b-YPE">
+                                <rect key="frame" x="148" y="11" width="728" height="410"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="pXk-rX-FiT" kind="embed" identifier="cpdc_check_embed" id="Rxt-Dr-eb8"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HNj-JD-nLP" customClass="GradientButton">
+                                <rect key="frame" x="242" y="670" width="58" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Loop">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playerItemmDidReachEnd" destination="2" eventType="touchUpInside" id="uyt-zj-CU7"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="Wqy-fE-yHH">
+                                <rect key="frame" x="628" y="559" width="366" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="vur-e9-MGb">
+                                <rect key="frame" x="18" y="559" width="366" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="UHZ-3k-EHb">
+                                <rect key="frame" x="437" y="555" width="151" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Fade"/>
+                                    <segment title="Sposta"/>
+                                </segments>
+                                <color key="tintColor" red="0.097998403279999993" green="0.58704949819999996" blue="0.63814438870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentedChanged:" destination="2" eventType="valueChanged" id="jou-Ka-rq8"/>
+                                </connections>
+                            </segmentedControl>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" id="nsM-Gg-bW5">
+                                <rect key="frame" x="0.0" y="507" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S2v-QO-Yqf">
+                                <rect key="frame" x="630" y="507" width="362" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qYl-gP-xdb">
+                                <rect key="frame" x="20" y="507" width="362" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view clearsContextBeforeDrawing="NO" alpha="0.70000000000000007" contentMode="top" id="JJ2-bF-In4" customClass="FXBlurView">
+                                <rect key="frame" x="0.0" y="722" width="1024" height="224"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bve-iL-MTT">
+                                        <rect key="frame" x="15" y="-1" width="18" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="plus.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showMediaPicker2:" destination="2" eventType="touchUpInside" id="XXd-vi-QAe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ah8-lT-Cjc">
+                                        <rect key="frame" x="985" y="-1" width="19" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="plus.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showMediaPicker:" destination="2" eventType="touchUpInside" id="xQq-nY-dcr"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WXd-JI-HFN">
+                                        <rect key="frame" x="15" y="35" width="331" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="tRH-NX-pr1">
+                                        <rect key="frame" x="354" y="35" width="96" height="96"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lEa-WO-Ldi">
+                                        <rect key="frame" x="15" y="88" width="58" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Stop">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopCanzonesx:" destination="2" eventType="touchUpInside" id="zfc-DH-tty"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mwd-zg-6do">
+                                        <rect key="frame" x="80" y="88" width="104" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Play/Pausa">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pausaPlayCanzoneSelezionatasx" destination="2" eventType="touchUpInside" id="wSB-ly-BBj"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" id="r3I-aF-ZJH">
+                                        <rect key="frame" x="13" y="154" width="439" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="maximumTrackTintColor" red="1" green="0.43529412150382996" blue="0.81176471710205078" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="sliderValueChanged:" destination="2" eventType="valueChanged" id="bKF-GU-UWk"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ROQ-fy-Zii">
+                                        <rect key="frame" x="569" y="35" width="331" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="lRl-7G-f8d">
+                                        <rect key="frame" x="908" y="35" width="96" height="96"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Ia-Wj-6pD">
+                                        <rect key="frame" x="681" y="88" width="58" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Stop">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopCanzonedx:" destination="2" eventType="touchUpInside" id="Oi6-q1-SOD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QEt-7L-vsk">
+                                        <rect key="frame" x="569" y="88" width="104" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Play/Pausa">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pausaPlayCanzoneSelezionatadx" destination="2" eventType="touchUpInside" id="vTi-ei-mkm"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" id="JJ2-J7-ZbG">
+                                        <rect key="frame" x="567" y="154" width="439" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="maximumTrackTintColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="sliderValueChangeddx:" destination="2" eventType="valueChanged" id="V5z-hc-wcN"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="nVJ-zy-CSo">
+                                        <rect key="frame" x="567" y="191" width="439" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="XoK-BV-9gZ">
+                                        <rect key="frame" x="13" y="191" width="439" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0k2-BB-GF7">
+                                        <rect key="frame" x="377" y="-27" width="232" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showHideView:" destination="2" eventType="touchUpInside" id="aeh-R1-hTY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <gestureRecognizers/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21176470589999999" green="0.55294117649999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="addVideoSx" destination="4nZ-qc-FLw" id="EhQ-0u-fGe"/>
+                        <outlet property="alphaChannelSlider" destination="HXs-Yx-R96" id="Qgf-75-4Bw"/>
+                        <outlet property="bottone" destination="Bve-iL-MTT" id="9eI-jM-B5o"/>
+                        <outlet property="bottone2" destination="Ah8-lT-Cjc" id="qub-8e-jio"/>
+                        <outlet property="bottone3" destination="CkF-SK-d6A" id="IP1-cC-aC9"/>
+                        <outlet property="cover1" destination="tRH-NX-pr1" id="eLG-Vv-7X1"/>
+                        <outlet property="cover2" destination="lRl-7G-f8d" id="hw3-mk-6Y4"/>
+                        <outlet property="labelTimeVideoDx" destination="S2v-QO-Yqf" id="Axl-ym-f9q"/>
+                        <outlet property="labelTimeVideoSx" destination="qYl-gP-xdb" id="L4z-Yu-UnB"/>
+                        <outlet property="loopSx" destination="HNj-JD-nLP" id="E4a-t1-cBi"/>
+                        <outlet property="muteSx" destination="c2B-KJ-eCF" id="iKG-P4-WZL"/>
+                        <outlet property="playDx" destination="0YT-vx-Tgp" id="wd8-Ai-pdq"/>
+                        <outlet property="playSx" destination="Xny-kW-1ex" id="XMb-BW-6tW"/>
+                        <outlet property="preloadedSx" destination="a3N-99-yAv" id="sdo-Lt-pBd"/>
+                        <outlet property="questoSiDeveVedere" destination="Ulu-1b-YPE" id="dwO-k5-k4r"/>
+                        <outlet property="scalette" destination="JJ2-bF-In4" id="PvU-fa-TKz"/>
+                        <outlet property="segmentedTransizione" destination="UHZ-3k-EHb" id="rmm-yM-cLs"/>
+                        <outlet property="sliderDurationDx" destination="nVJ-zy-CSo" id="7n4-l0-K2Q"/>
+                        <outlet property="sliderDurationSx" destination="XoK-BV-9gZ" id="a9j-Y2-Yf8"/>
+                        <outlet property="sliderDx" destination="c3P-nR-5v7" id="579-Gk-V6I"/>
+                        <outlet property="sliderSx" destination="k54-jM-aSO" id="A2P-j6-obb"/>
+                        <outlet property="sliderdx" destination="JJ2-J7-ZbG" id="J5B-AT-00N"/>
+                        <outlet property="slidersx" destination="r3I-aF-ZJH" id="ZVN-qS-zEx"/>
+                        <outlet property="stopSx" destination="T6o-xk-vlr" id="gbW-D6-pSi"/>
+                        <outlet property="timeSliderDx" destination="Wqy-fE-yHH" id="v83-44-t0L"/>
+                        <outlet property="timeSliderSx" destination="vur-e9-MGb" id="dRG-ns-wdB"/>
+                        <outlet property="titolo1" destination="WXd-JI-HFN" id="bH6-BP-9cy"/>
+                        <outlet property="titolo2" destination="ROQ-fy-Zii" id="kaM-tp-OM5"/>
+                        <outlet property="view" destination="5" id="NDw-S7-G8U"/>
+                        <outlet property="volumeSliderAvplayer2" destination="IEL-e6-WRF" id="RsL-2s-7vk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Hmi-ci-lOo"/>
+                <tapGestureRecognizer id="NeK-N8-hK9"/>
+            </objects>
+            <point key="canvasLocation" x="-785" y="347"/>
+        </scene>
+        <!--Seleziona Video Musicali Controller-->
+        <scene sceneID="GRs-40-Akt">
+            <objects>
+                <viewController id="ybL-GF-1i4" customClass="selezionaVideoMusicaliController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AJn-Cv-PrO">
+                        <rect key="frame" x="0.0" y="20" width="350" height="420"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="yId-03-jTz">
+                                <rect key="frame" x="0.0" y="0.0" width="352" height="420"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="tQz-iz-41a" customClass="VideoCell">
+                                        <rect key="frame" x="0.0" y="22" width="352" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="352" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dgQ-ta-Ov7">
+                                                    <rect key="frame" x="114" y="-51" width="276" height="138"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Pwi-6F-wsd">
+                                                    <rect key="frame" x="20" y="5" width="70" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ij0-G3-bAa">
+                                                    <rect key="frame" x="114" y="54" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="durataVideo" destination="Ij0-G3-bAa" id="C4B-Hs-Iot"/>
+                                            <outlet property="snapVideo" destination="Pwi-6F-wsd" id="OV5-nu-ETc"/>
+                                            <outlet property="titoloVideo" destination="dgQ-ta-Ov7" id="YEz-pE-OEJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ybL-GF-1i4" id="apA-bg-Y4A"/>
+                                    <outlet property="delegate" destination="ybL-GF-1i4" id="erJ-w8-TSR"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="350" height="420"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="primaTabella" destination="yId-03-jTz" id="RSF-Tw-QcP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f01-b6-dQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="369" y="-192"/>
+        </scene>
+        <!--File Sharing View Controller-->
+        <scene sceneID="yf3-LL-bzy">
+            <objects>
+                <viewController id="PfO-l5-688" customClass="FileSharingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IZM-IO-a5X">
+                        <rect key="frame" x="0.0" y="20" width="350" height="420"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tfz-EI-r6Q">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="420"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="Pzg-pV-HIK" customClass="VideoCell">
+                                        <rect key="frame" x="0.0" y="22" width="350" height="36"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="35"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DXI-eK-wDk">
+                                                    <rect key="frame" x="20" y="-51" width="330" height="138"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="titoloVideo" destination="DXI-eK-wDk" id="qk0-M1-Bjj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PfO-l5-688" id="Dpl-19-WN0"/>
+                                    <outlet property="delegate" destination="PfO-l5-688" id="KYd-6q-dVg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IU0-dK-9bR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-242" y="1191"/>
+        </scene>
+        <!--File Sharing View Controller-->
+        <scene sceneID="ynZ-I5-jcx">
+            <objects>
+                <viewController id="DPA-95-lJs" customClass="FileSharingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wJP-EU-cds">
+                        <rect key="frame" x="0.0" y="20" width="350" height="420"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" id="FiP-eo-a31">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="420"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="tO5-c9-1Kq" customClass="VideoCell">
+                                        <rect key="frame" x="0.0" y="22" width="350" height="36"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="35"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yr2-uy-211">
+                                                    <rect key="frame" x="20" y="-51" width="330" height="138"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="titoloVideo" destination="yr2-uy-211" id="8pG-U3-NDj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="DPA-95-lJs" id="4EM-rB-hfT"/>
+                                    <outlet property="delegate" destination="DPA-95-lJs" id="cRp-72-IYe"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="350" height="420"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZYt-5c-2B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971" y="1071"/>
+        </scene>
+        <!--Seleziona Video Musicali Controller-->
+        <scene sceneID="RTe-Yx-Tc2">
+            <objects>
+                <viewController id="9bW-fR-sty" customClass="selezionaVideoMusicaliController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7tY-vK-CHd">
+                        <rect key="frame" x="0.0" y="20" width="350" height="420"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="iVk-j3-2UG">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="420"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="N9z-gf-j3v" customClass="VideoCell">
+                                        <rect key="frame" x="0.0" y="22" width="350" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I80-YR-h03">
+                                                    <rect key="frame" x="114" y="-51" width="276" height="138"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5sH-8H-6M2">
+                                                    <rect key="frame" x="20" y="5" width="70" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="02E-jz-u1c">
+                                                    <rect key="frame" x="114" y="54" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="durataVideo" destination="02E-jz-u1c" id="8rL-xu-d1a"/>
+                                            <outlet property="snapVideo" destination="5sH-8H-6M2" id="Hmj-4n-Tu4"/>
+                                            <outlet property="titoloVideo" destination="I80-YR-h03" id="CYP-vs-8nI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9bW-fR-sty" id="DQd-mk-xK9"/>
+                                    <outlet property="delegate" destination="9bW-fR-sty" id="hfw-X7-blI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="350" height="420"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="secondaTabella" destination="iVk-j3-2UG" id="u4k-e2-PT7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8TV-Jp-ivN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689" y="437"/>
+        </scene>
+        <!--Container Controller-->
+        <scene sceneID="fSf-tP-XDo">
+            <objects>
+                <viewController restorationIdentifier="" storyboardIdentifier="" wantsFullScreenLayout="YES" id="pXk-rX-FiT" customClass="ContainerController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="name" id="5Zc-br-es0">
+                        <rect key="frame" x="0.0" y="0.0" width="728" height="410"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" id="TG3-A5-BZR" customClass="avPlayer">
+                                <rect key="frame" x="0.0" y="0.0" width="728" height="410"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" id="eCc-c1-BGZ" customClass="avPlayer">
+                                <rect key="frame" x="0.0" y="0.0" width="728" height="410"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                        </subviews>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="playerViewdx" destination="eCc-c1-BGZ" id="vB2-6C-iOV"/>
+                        <outlet property="playerViewsx" destination="TG3-A5-BZR" id="7eu-T7-4CX"/>
+                        <outlet property="vistaGrande" destination="5Zc-br-es0" id="XMC-b2-qWn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPb-xK-gIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-620" y="-257"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus.png" width="15" height="15"/>
+    </resources>
+    <classes>
+        <class className="ContainerController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="playerViewdx" candidateClass="avPlayer"/>
+                <relationship kind="outlet" name="playerViewsx" candidateClass="avPlayer"/>
+                <relationship kind="outlet" name="vistaGrande" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="FXBlurView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FXBlurView.h"/>
+        </class>
+        <class className="FileSharingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FileSharingViewController.h"/>
+        </class>
+        <class className="GradientButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
+        </class>
+        <class className="VideoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="durataVideo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="snapVideo" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titoloVideo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="urlVideo" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="alphaChannelSliderChanged:" candidateClass="UISlider"/>
+                <relationship kind="action" name="muteVideoDx:"/>
+                <relationship kind="action" name="muteVideoSx:"/>
+                <relationship kind="action" name="pausaPlayCanzoneSelezionatadx"/>
+                <relationship kind="action" name="pausaPlayCanzoneSelezionatasx"/>
+                <relationship kind="action" name="playerItemmDidReachEnd"/>
+                <relationship kind="action" name="playerItemmmDidReachEnd"/>
+                <relationship kind="action" name="showMediaPicker2:"/>
+                <relationship kind="action" name="showMediaPicker:"/>
+                <relationship kind="action" name="sliderRateVideo:" candidateClass="UISlider"/>
+                <relationship kind="action" name="sliderRateVideodx:" candidateClass="UISlider"/>
+                <relationship kind="action" name="sliderValueChanged:" candidateClass="UISlider"/>
+                <relationship kind="action" name="sliderValueChangeddx:" candidateClass="UISlider"/>
+                <relationship kind="action" name="stopCanzonedx:"/>
+                <relationship kind="action" name="stopCanzonesx:"/>
+                <relationship kind="action" name="stopMovie"/>
+                <relationship kind="action" name="stopMovie2"/>
+                <relationship kind="action" name="volumeSliderAvplayer2Changed:" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="addVideoSx" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="alphaChannelSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="bottone" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bottone2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bottone3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cover1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cover2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelTimeVideoDx" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelTimeVideoSx" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loopSx" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="muteSx" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playDx" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playSx" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="preloadedSx" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="questoSiDeveVedere" candidateClass="UIView"/>
+                <relationship kind="outlet" name="scalette" candidateClass="FXBlurView"/>
+                <relationship kind="outlet" name="segmentedTransizione" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="sliderDurationDx" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderDurationSx" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderDx" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderSx" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderdx" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="slidersx" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="stopSx" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="timeSliderDx" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="timeSliderSx" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="titolo1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titolo2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="volumeSliderAvplayer2" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="avPlayer" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/avPlayer.h"/>
+        </class>
+        <class className="selezionaVideoMusicaliController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/selezionaVideoMusicaliController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="primaTabella" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="secondaTabella" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
