@@ -19,8 +19,6 @@
 		70C7FD6917CE5A12006461E8 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C7FD6817CE5A12006461E8 /* GradientButton.m */; };
 		70DCFED717C9602E00B05FF9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DCFED617C9602E00B05FF9 /* AudioToolbox.framework */; };
 		70DCFEE217C96A7100B05FF9 /* WaveformImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCFEE117C96A7000B05FF9 /* WaveformImageView.m */; };
-		70DCFEE817C970C200B05FF9 /* TSLibraryImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCFEDC17C967E000B05FF9 /* TSLibraryImport.m */; };
-		70DCFEE917C970C200B05FF9 /* NSThread+MCSMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCFEE417C96E7E00B05FF9 /* NSThread+MCSMAdditions.m */; };
 		70F93BCD17B3B84E00EA5653 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F93BCC17B3B84E00EA5653 /* AssetsLibrary.framework */; };
 		FA0B6FBE1737C04D00078572 /* avPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0B6FBD1737C04D00078572 /* avPlayer.m */; };
 		FA12FF55172B0D8900BE283B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA12FF54172B0D8900BE283B /* QuartzCore.framework */; };
@@ -63,12 +61,8 @@
 		70C7FD6717CE5A12006461E8 /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
 		70C7FD6817CE5A12006461E8 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
 		70DCFED617C9602E00B05FF9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		70DCFEDB17C967E000B05FF9 /* TSLibraryImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSLibraryImport.h; sourceTree = "<group>"; };
-		70DCFEDC17C967E000B05FF9 /* TSLibraryImport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSLibraryImport.m; sourceTree = "<group>"; };
 		70DCFEE017C96A7000B05FF9 /* WaveformImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaveformImageView.h; path = ../WaveformImageView.h; sourceTree = "<group>"; };
 		70DCFEE117C96A7000B05FF9 /* WaveformImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaveformImageView.m; path = ../WaveformImageView.m; sourceTree = "<group>"; };
-		70DCFEE317C96E7E00B05FF9 /* NSThread+MCSMAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSThread+MCSMAdditions.h"; sourceTree = "<group>"; };
-		70DCFEE417C96E7E00B05FF9 /* NSThread+MCSMAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSThread+MCSMAdditions.m"; sourceTree = "<group>"; };
 		70F93BCC17B3B84E00EA5653 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		FA0B6FBC1737C04D00078572 /* avPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avPlayer.h; sourceTree = "<group>"; };
 		FA0B6FBD1737C04D00078572 /* avPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = avPlayer.m; sourceTree = "<group>"; };
@@ -180,10 +174,6 @@
 				FA4AA7F1172B030C00C5B3F3 /* ViewController.m */,
 				FA0B6FBC1737C04D00078572 /* avPlayer.h */,
 				FA0B6FBD1737C04D00078572 /* avPlayer.m */,
-				70DCFEDB17C967E000B05FF9 /* TSLibraryImport.h */,
-				70DCFEDC17C967E000B05FF9 /* TSLibraryImport.m */,
-				70DCFEE317C96E7E00B05FF9 /* NSThread+MCSMAdditions.h */,
-				70DCFEE417C96E7E00B05FF9 /* NSThread+MCSMAdditions.m */,
 				7007005217D3F38C0055A530 /* FXBlurView.h */,
 				7007005317D3F38C0055A530 /* FXBlurView.m */,
 				FA4AA7DC172B030C00C5B3F3 /* Supporting Files */,
@@ -290,8 +280,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7007005417D3F46A0055A530 /* FXBlurView.m in Sources */,
-				70DCFEE817C970C200B05FF9 /* TSLibraryImport.m in Sources */,
-				70DCFEE917C970C200B05FF9 /* NSThread+MCSMAdditions.m in Sources */,
 				FA4AA7E2172B030C00C5B3F3 /* main.m in Sources */,
 				FA4AA7E6172B030C00C5B3F3 /* AppDelegate.m in Sources */,
 				FA4AA7F2172B030C00C5B3F3 /* ViewController.m in Sources */,
