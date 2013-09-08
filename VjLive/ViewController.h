@@ -135,6 +135,8 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *titolo1;
 @property (strong, nonatomic) IBOutlet UILabel *titolo2;
+@property (weak, nonatomic) IBOutlet UILabel *artista1;
+@property (weak, nonatomic) IBOutlet UILabel *artista2;
 
 @property (strong, nonatomic) UIStoryboardPopoverSegue* popSegue;
 

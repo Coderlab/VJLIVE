@@ -17,8 +17,84 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+  [_alphaChannelSlider setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
+    [_alphaChannelSlider setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
+    [_alphaChannelSlider setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
+                               forState:UIControlStateNormal];
+    [_alphaChannelSlider setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
+                               forState:UIControlStateNormal];
+    [_volumeSliderAvplayer2 setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
+    [_volumeSliderAvplayer2 setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
+    [_volumeSliderAvplayer2 setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
+                                     forState:UIControlStateNormal];
+    [_volumeSliderAvplayer2 setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
+                                     forState:UIControlStateNormal];
     
+    [_timeSliderDx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
+    [_timeSliderDx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
+    [_timeSliderDx setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
+                                        forState:UIControlStateNormal];
+    [_timeSliderDx setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
+                                        forState:UIControlStateNormal];
+
+    [_timeSliderSx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
+    [_timeSliderSx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
+    [_timeSliderSx setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
+                               forState:UIControlStateNormal];
+    [_timeSliderSx setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
+                               forState:UIControlStateNormal];
+    
+    
+    [_sliderDx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
+    [_sliderDx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
+    [_sliderDx setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
+                               forState:UIControlStateNormal];
+    [_sliderDx setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
+                               forState:UIControlStateNormal];
+
+    [_sliderSx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
+    [_sliderSx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
+    [_sliderSx setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
+                           forState:UIControlStateNormal];
+    [_sliderSx setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
+                           forState:UIControlStateNormal];
+    /* MODIFICARE LO STILE DEL SEGMENT SPOSTA - FADE 
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [[UIColor blackColor] CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *transparentImage = UIGraphicsGetImageFromCurrentImageContext();
+    CGRect rect2= CGRectMake(0, 0, 1, 1);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context2 = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context2, [[UIColor whiteColor] CGColor]);
+    CGContextFillRect(context2, rect2);
+    UIImage *transparentImage2 = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIFont fontWithName:@"Helvetica Neue" size:12], UITextAttributeFont,
+                                [UIColor whiteColor], UITextAttributeTextColor, nil];
+    [segmentedTransizione setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    NSDictionary *attributes2 = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIFont fontWithName:@"Helvetica Neue" size:12], UITextAttributeFont,
+                                [UIColor blackColor], UITextAttributeTextColor, nil];
+    [segmentedTransizione setTitleTextAttributes:attributes2 forState:UIControlStateSelected];
+    
+    NSDictionary *highlightedAttributes = [NSDictionary
+                                           dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    [segmentedTransizione setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
+    
+    [self.segmentedTransizione setBackgroundImage:transparentImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    [self.segmentedTransizione setBackgroundImage:transparentImage2 forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+
+    [self.segmentedTransizione setBackgroundImage:transparentImage2 forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+
+    [self.segmentedTransizione setDividerImage:transparentImage forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    */
     //setto la variabile per far andare su e giu la vista "musica"
     su=0;
     
@@ -421,8 +497,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
 
     
-    //se il pulsante muto è attivo non cambiare volume
-    if( mutesx ==1){        
+    if( mutesx ==1){
     }else if(mutesx ==0){
         [self.checkVC.playerViewsx setVolume:(1-_volumeSliderAvplayer2.value) chi:self.checkVC.playerViewsx.player];
     }
@@ -869,9 +944,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     // Crea una media picker view
     picker.delegate = self;
     [picker setAllowsPickingMultipleItems: NO];
-    picker.prompt =
-    NSLocalizedString (@"AGGIUNGI UNA CANZONE AL DECK DI DESTRA",
-                       "Prompt in media item picker");
+   // picker.prompt =NSLocalizedString (@"AGGIUNGI UNA CANZONE AL DECK DI DESTRA","Prompt in media item picker");
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         
@@ -880,7 +953,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         
         if (self.view.window != nil){
             if (su==1) {
-                [popover presentPopoverFromRect:CGRectMake(_bottone2.frame.origin.x-120, _bottone2.frame.origin.y-30+_bottone2.frame.size.height, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                [popover presentPopoverFromRect:CGRectMake(_bottone2.frame.origin.x, _bottone2.frame.origin.y+_bottone2.frame.size.height-111, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
                 NSLog(@"%f e %f",_bottone2.frame.origin.x, _bottone2.frame.origin.y);
             }else{
                 [popover presentPopoverFromRect:CGRectMake(_bottone2.frame.origin.x-150+(_bottone2.frame.size.width/2), _bottone2.frame.origin.y, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
@@ -904,8 +977,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     picker2.delegate = self;
     [picker2 setAllowsPickingMultipleItems: NO];
     picker2.prompt =
-    NSLocalizedString (@"AGGIUNGI UNA CANZONE AL DECK DI SINISTRA",
-                       "Prompt in media item picker");
+ //   NSLocalizedString (@"AGGIUNGI UNA CANZONE AL DECK DI SINISTRA","Prompt in media item picker");
     picker2.title = @"TITOLOSX";
     
     
@@ -916,7 +988,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         
         if (self.view.window != nil){
             if (su==1) {
-                [popover2 presentPopoverFromRect:CGRectMake(_bottone.frame.origin.x-150-_bottone.frame.size.width-_bottone.frame.size.width, _bottone.frame.origin.y-123+_bottone.frame.size.height, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                [popover2 presentPopoverFromRect:CGRectMake(_bottone.frame.origin.x-275, _bottone.frame.origin.y-111+_bottone.frame.size.height, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
                 NSLog(@"%f e %f",_bottone.frame.origin.x, _bottone.frame.origin.y);
             }else{
                 [popover2 presentPopoverFromRect:CGRectMake(_bottone.frame.origin.x-150+(_bottone.frame.size.width/2), _bottone.frame.origin.y, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
@@ -950,7 +1022,6 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     [popover dismissPopoverAnimated:YES];
     [popover2 dismissPopoverAnimated:YES];
-    [popover3 dismissPopoverAnimated:YES];
     [picker dismissMoviePlayerViewControllerAnimated];
     [picker2 dismissMoviePlayerViewControllerAnimated];
     // il media picker ha un massimo di 1 elemento selezionabile
@@ -965,7 +1036,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         [player stop];
         _cover1.image = [artWork imageWithSize:CGSizeMake(96, 96)];
         _titolo1.text = [item valueForProperty:MPMediaItemPropertyTitle];
-        
+        _artista1.text = [item valueForProperty:MPMediaItemPropertyArtist];
         player = [[AVAudioPlayer alloc]initWithContentsOfURL:urlSongSinistra error:nil];
         [player prepareToPlay];
         
@@ -978,7 +1049,6 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         // controllo se cambia canzone rifaccio il controllo sulla durata
         
         [sliderDurationSx addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
-        [popover dismissPopoverAnimated:YES];
         
         /*
          dispatch_queue_t queue = dispatch_queue_create("createWaveForm",NULL);
@@ -994,7 +1064,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         [player2 stop];
         _cover2.image = [artWork imageWithSize:CGSizeMake(96, 96)];
         _titolo2.text = [item valueForProperty:MPMediaItemPropertyTitle];
-        
+        _artista2.text = [item valueForProperty:MPMediaItemPropertyArtist];
         
         player2 = [[AVAudioPlayer alloc]initWithContentsOfURL:urlSongDestra error:nil];
         [player2 prepareToPlay];
@@ -1004,7 +1074,6 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         sliderDurationDx.maximumValue = player2.duration;
         // Set the valueChanged target
         [sliderDurationDx addTarget:self action:@selector(sliderDxChanged:) forControlEvents:UIControlEventValueChanged];
-        [popover dismissPopoverAnimated:YES];
         
         /*
          dispatch_queue_t queue = dispatch_queue_create("createWaveForm",NULL);
@@ -1023,7 +1092,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     sliderDurationDx.value = player2.currentTime;
     
 }
-- (IBAction)sliderChanged:(UISlider *)sender {
+- (void)sliderChanged:(UISlider *)sender {
     
 	// Se un utente va avanti sulla linea temporale re-imposta il tempo sul secondo in cui è settato lo slider
     if ( player.isPlaying ){
@@ -1038,7 +1107,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     }
     
 }
-- (IBAction)sliderDxChanged:(UISlider *)sender {
+- (void)sliderDxChanged:(UISlider *)sender {
     
 	// Se un utente va avanti sulla linea temporale re-imposta il tempo sul secondo in cui è settato lo slider
     if ( player2.isPlaying ){
@@ -1057,6 +1126,9 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
 - (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker {
     // se clicchi cancel il popover sparisce
     [popover dismissPopoverAnimated:YES];
+    [popover2 dismissPopoverAnimated:YES];
+    [picker dismissMoviePlayerViewControllerAnimated];
+    [picker2 dismissMoviePlayerViewControllerAnimated];
 }
 - (IBAction)showHideView:(id)sender
 {

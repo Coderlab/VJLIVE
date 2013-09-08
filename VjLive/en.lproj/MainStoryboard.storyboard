@@ -86,7 +86,7 @@
                                     <action selector="alphaChannelSliderChanged:" destination="2" eventType="valueChanged" id="pCA-nB-Hej"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="-1" maxValue="1" id="IEL-e6-WRF">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" id="IEL-e6-WRF">
                                 <rect key="frame" x="385" y="466" width="254" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.22745098039215686" green="0.46666666666666667" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
@@ -266,13 +266,13 @@
                             <view alpha="0.20000000000000001" contentMode="scaleToFill" id="nsM-Gg-bW5">
                                 <rect key="frame" x="0.0" y="507" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42745098039215684" green="0.75294117647058822" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.23921568627450979" green="0.75294117647058822" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S2v-QO-Yqf">
                                 <rect key="frame" x="630" y="507" width="362" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -280,7 +280,7 @@
                                 <rect key="frame" x="20" y="507" width="362" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -443,6 +443,20 @@
                                             <action selector="showHideView:" destination="2" eventType="touchUpInside" id="aeh-R1-hTY"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RXO-Ew-BIK">
+                                        <rect key="frame" x="15" y="55" width="331" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rab-me-kAa">
+                                        <rect key="frame" x="569" y="55" width="331" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -460,6 +474,8 @@
                     <connections>
                         <outlet property="addVideoSx" destination="4nZ-qc-FLw" id="EhQ-0u-fGe"/>
                         <outlet property="alphaChannelSlider" destination="HXs-Yx-R96" id="Qgf-75-4Bw"/>
+                        <outlet property="artista1" destination="RXO-Ew-BIK" id="pn8-Fa-1ZX"/>
+                        <outlet property="artista2" destination="rab-me-kAa" id="rEo-Mm-Uqt"/>
                         <outlet property="bottone" destination="Bve-iL-MTT" id="9eI-jM-B5o"/>
                         <outlet property="bottone2" destination="Ah8-lT-Cjc" id="qub-8e-jio"/>
                         <outlet property="bottone3" destination="CkF-SK-d6A" id="IP1-cC-aC9"/>
@@ -614,7 +630,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IU0-dK-9bR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242" y="1191"/>
+            <point key="canvasLocation" x="514" y="1471"/>
         </scene>
         <!--File Sharing View Controller-->
         <scene sceneID="ynZ-I5-jcx">
@@ -817,6 +833,8 @@
                 <relationship kind="action" name="volumeSliderAvplayer2Changed:" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="addVideoSx" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="alphaChannelSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="artista1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="artista2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bottone" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bottone2" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bottone3" candidateClass="UIButton"/>
