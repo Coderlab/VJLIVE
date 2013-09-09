@@ -60,14 +60,12 @@
     VideoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     NSInteger row = indexPath.row;
     NSFileManager *manager = [NSFileManager defaultManager];
-    NSArray *fileList =
-    [manager contentsOfDirectoryAtPath:documentsDirectory error:nil];
+    NSArray *fileList = [manager contentsOfDirectoryAtPath:documentsDirectory error:nil];
 
     
     NSArray *path =[manager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
-
-    cell.titoloVideo.text = [NSString stringWithFormat:@"%ld%@", (long)indexPath.row, fileList[row]];
-
+    
+    cell.titoloVideo.text = [NSString stringWithFormat:@"%@", fileList[row]];
     fullpath = [NSString stringWithFormat:@"%@%@", path[0], fileList[row]];
 
     return cell;

@@ -673,15 +673,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     return valoreMappato;
 }
 
--(void)setSliderTimeSx{
-    
-    sliderTimerVideoSx = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self    selector:@selector(updateSliderTimeSx) userInfo:nil repeats:YES];
-    self.timeSliderSx.maximumValue = [self durationInSecondsSx];
-    [_timeSliderSx addTarget:self action:@selector(sliding:) forControlEvents:UIControlEventValueChanged];
-    _timeSliderSx.minimumValue = 0.0;
-    _timeSliderSx.continuous = YES;
-    
-}
+
 
 - (void)updateSliderTimeSx {
     self.timeSliderSx.value = [self currentTimeInSecondsSx];
@@ -736,9 +728,8 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
 }
 -(void)sliding:(id)sender{
-    
+   
     if([sender isEqual:_timeSliderDx]){
-        
         
         if( [_playDx.titleLabel.text isEqual:@"Pause"]){
             [self.checkVC.playerVideo pause];
@@ -758,7 +749,6 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         if( [_playDx.titleLabel.text isEqual:@"Pause"]){
             [self.checkVC.playerVideo setRate:ratedx] ;
         }
-;
     }else if ([sender isEqual:_timeSliderSx]){
         
         
@@ -788,12 +778,20 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     sliderTimerVideo = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self    selector:@selector(updateSliderTime) userInfo:nil repeats:YES];
     self.timeSliderDx.maximumValue = [self durationInSeconds];
-    [_timeSliderDx addTarget:self action:@selector(sliding:) forControlEvents:UIControlEventValueChanged];
+    [_timeSliderDx addTarget:self action:@selector(sliding:) forControlEvents:(UIControlEventTouchUpInside | UIControlEventTouchUpOutside)];
     _timeSliderDx.minimumValue = 0.0;
     _timeSliderDx.continuous = YES;
     
 }
-
+-(void)setSliderTimeSx{
+    
+    sliderTimerVideoSx = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self    selector:@selector(updateSliderTimeSx) userInfo:nil repeats:YES];
+    self.timeSliderSx.maximumValue = [self durationInSecondsSx];
+    [_timeSliderSx addTarget:self action:@selector(sliding:) forControlEvents:(UIControlEventTouchUpInside | UIControlEventTouchUpOutside)];
+    _timeSliderSx.minimumValue = 0.0;
+    _timeSliderSx.continuous = YES;
+    
+}
 - (void)updateSliderTime {
     self.timeSliderDx.value = [self currentTimeInSeconds];
     NSTimeInterval timeLeft = [self durationInSeconds] - [self currentTimeInSeconds];
@@ -1004,18 +1002,6 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     }
     
 }
-- (IBAction)showMediaPicker3:(id)sender
-{
-    
-    
-    MPMediaPropertyPredicate *predicate = [MPMediaPropertyPredicate predicateWithValue:[NSNumber numberWithInteger:MPMediaTypeAnyVideo] forProperty:MPMediaItemPropertyMediaType];
-    
-    MPMediaQuery *query = [[MPMediaQuery alloc] init];
-    [query addFilterPredicate:predicate];
-    
-    
-}
-
 
 
 - (void)mediaPicker: (MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {

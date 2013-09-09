@@ -17,6 +17,7 @@
 #import "ContainerController.h"
 #import "FXBlurView.h"
 
+
 @class avPlayer;
 @class AVPlayer;
 
@@ -24,8 +25,6 @@
 @interface ViewController : UIViewController<MPMediaPickerControllerDelegate,AVAudioPlayerDelegate>{
     UIPopoverController* popover;
     UIPopoverController* popover2;
-    UIPopoverController* popover3;
-    
     id segui;
 
     NSURL *urlSongDestra;

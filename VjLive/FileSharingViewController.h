@@ -19,7 +19,7 @@
 
 @end
 
-@interface FileSharingViewController : UIViewController<MPMediaPickerControllerDelegate,UITableViewDelegate,UITableViewDataSource>{
+@interface FileSharingViewController : UIViewController<MPMediaPickerControllerDelegate,UITableViewDelegate,UITableViewDataSource,UIPopoverControllerDelegate>{
     id                              myDelegate;
     NSString *fullpath;
     NSString *finalfullpath;
