@@ -100,7 +100,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     dispatch_queue_t queue = dispatch_queue_create("altro",NULL);
     dispatch_async(queue, ^{
-        scalette.tintColor = [UIColor whiteColor];
+        scalette.tintColor = [UIColor blackColor];
     });
     mutedx = 0;
     mutesx  = 0;
@@ -201,7 +201,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
             self.checkVC.playerVideosx.rate = _sliderSx.value / 100.0;
         }else if (sender.view == _alphaChannelSlider){
             _alphaChannelSlider.value =_alphaChannelSlider.maximumValue/2;
-            [self cambiaVolumealPlayer];
+            [self alphaChannelSliderHalf];
         }else if(sender.view == _volumeSliderAvplayer2){
             _volumeSliderAvplayer2.value =_volumeSliderAvplayer2.maximumValue/2;
             [self cambiaVolumealPlayer];
@@ -294,10 +294,12 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     CGPoint translation = [panRecognizer translationInView:self.view];
     
     CGPoint imageViewPosition = self.scalette.center;
+
+
     
     imageViewPosition.y += translation.y;
-    if (imageViewPosition.y < 636 ){
-        imageViewPosition.y = 636;
+    if (imageViewPosition.y < 663 ){
+        imageViewPosition.y = 663;
     }
     if (imageViewPosition.y > 833 ){
         imageViewPosition.y = 833;
@@ -321,31 +323,17 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
             
             self.checkVC.playerViewsx.frame = screenBounds;
             self.checkVC.playerViewdx.frame = screenBounds;
-            if(_alphaChannelSlider.value >51 ){
-                nuovomassimodx= [self mappaValori:(_alphaChannelSlider.value/ 100.0) valoremassimocorrente:(_alphaChannelSlider.maximumValue/100) nuovomassimo:100.0f];
-                //cambia l'opacità dei video
-                self.checkVC.playerViewdx.alpha = nuovomassimodx/ 100.0;
-                self.checkVC.playerViewsx.alpha =  1.0-(nuovomassimodx/ 100.0);
-            }else if (_alphaChannelSlider.value<51){
-                nuovomassimosx = [self mappaValori:(_alphaChannelSlider.value/ 100.0) valoremassimocorrente:(_alphaChannelSlider.maximumValue/100) nuovomassimo:nuovomassimodx];
-                self.checkVC.playerViewdx.alpha = nuovomassimosx/ 100.0;
-                self.checkVC.playerViewsx.alpha =  1.0-(nuovomassimosx/ 100.0);
-            }
+
+                self.checkVC.playerViewdx.alpha = _alphaChannelSlider.value/ 100.0;
+                self.checkVC.playerViewsx.alpha =  1.0-(_alphaChannelSlider.value/ 100.0);
             
         }else{
             self.checkVC.playerViewsx.frame = curFrameAlpha;
             self.checkVC.playerViewdx.frame = curFrameAlpha;
-            if(_alphaChannelSlider.value >51 ){
-                nuovomassimodx= [self mappaValori:(_alphaChannelSlider.value/ 100.0) valoremassimocorrente:(_alphaChannelSlider.maximumValue/100) nuovomassimo:100.0f];
-                //cambia l'opacità dei video
-                self.checkVC.playerViewdx.alpha = nuovomassimodx/ 100.0;
-                self.checkVC.playerViewsx.alpha =  1.0-(nuovomassimodx/ 100.0);
-            }else if (_alphaChannelSlider.value<51){
-                nuovomassimosx = [self mappaValori:(_alphaChannelSlider.value/ 100.0) valoremassimocorrente:(_alphaChannelSlider.maximumValue/100) nuovomassimo:nuovomassimodx];
-                self.checkVC.playerViewdx.alpha = nuovomassimosx/ 100.0;
-                self.checkVC.playerViewsx.alpha =  1.0-(nuovomassimosx/ 100.0);
+            self.checkVC.playerViewdx.alpha = _alphaChannelSlider.value/ 100.0;
+            self.checkVC.playerViewsx.alpha =  1.0-(_alphaChannelSlider.value/ 100.0);
             }
-        }
+        
         
         
     }
@@ -401,14 +389,14 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     if( self.checkVC.playerViewdx.player.rate == 0 && self.checkVC.playerViewdx.player.status == AVPlayerStatusReadyToPlay){
         [_playDx setTitle:@"Pause" forState:UIControlStateNormal];
-        
+        [_playDx setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
         [self.checkVC.playerViewdx.player play];
         self.checkVC.playerVideo.rate = ratedx;
     }
     else if (self.checkVC.playerViewdx.player.rate != 0){
         [_playDx setTitle:@"Play" forState:UIControlStateNormal];
         [self.checkVC.playerViewdx.player pause];
-        
+                [_playDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
     }
     
 }
@@ -428,12 +416,14 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     if( self.checkVC.playerViewsx.player.rate == 0 && self.checkVC.playerViewsx.player.status == AVPlayerStatusReadyToPlay){
         [_playSx setTitle:@"Pause" forState:UIControlStateNormal];
+              [_playSx setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
         [self.checkVC.playerViewsx.player play];
         self.checkVC.playerVideosx.rate = ratesx;
     }
     else if (self.checkVC.playerViewsx.player.rate != 0){
         [_playSx setTitle:@"Play" forState:UIControlStateNormal];
         [self.checkVC.playerViewsx.player pause];
+                        [_playSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
         
     }
 }
@@ -506,6 +496,9 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
 }
 
 - (void)popOverItemSelected:(NSURL *)selectedItem{
+    
+    //appena selezionato il video dismette la vista popover di selezione video
+    [self.popSegue dismissPopoverAnimated:YES];
     
     if (chie == 0){
         //Video di destra
@@ -593,21 +586,53 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
 }
 
+-(void)alphaChannelSliderHalf{
+    if ([segmentedTransizione selectedSegmentIndex] == 0){
 
+            self.checkVC.playerViewdx.alpha = 0.5;
+            self.checkVC.playerViewsx.alpha =  0.5;
+        }
+    else if ([segmentedTransizione selectedSegmentIndex] == 1){
+        
+        if ([[UIScreen screens] count] > 1)
+        {
+            // Get the screen object that represents the external display.
+            UIScreen *secondScreen = [[UIScreen screens] objectAtIndex:1];
+            // Get the screen's bounds so that you can create a window of the correct size.
+            CGRect screenBounds = secondScreen.bounds;
+            float larghezzaschermo = screenBounds.size.width;
+            float dove  = [self mappaValori:_alphaChannelSlider.value valoremassimocorrente:0 nuovomassimo:screenBounds.size.width];
+            // aggiungere alla cordinata x delle viste il valore di totale-dove
+            curFramesx =CGRectMake(-dove, self.checkVC.playerViewsx.frame.origin.y, self.checkVC.playerViewsx.frame.size.width, self.checkVC.playerViewsx.frame.size.height);
+            
+            
+            self.checkVC.playerViewsx.frame = curFramesx;
+            
+            curFramedx = CGRectMake(larghezzaschermo-dove, self.checkVC.playerViewsx.frame.origin.y, self.checkVC.playerViewsx.frame.size.width, self.checkVC.playerViewsx.frame.size.height);
+            self.checkVC.playerViewdx.frame = curFramedx;
+        }else{
+            float dove  = [self mappaValori:_alphaChannelSlider.value valoremassimocorrente:0 nuovomassimo:self.checkVC.playerViewsx.frame.size.width];
+            // aggiungere alla cordinata x delle viste il valore di totale-dove
+            
+            curFramesx =CGRectMake(-dove, self.checkVC.playerViewsx.frame.origin.y, self.checkVC.playerViewsx.frame.size.width, self.checkVC.playerViewsx.frame.size.height);
+            
+            
+            self.checkVC.playerViewsx.frame = curFramesx;
+            
+            curFramedx = CGRectMake(self.checkVC.playerViewsx.frame.size.width-dove, self.checkVC.playerViewsx.frame.origin.y, self.checkVC.playerViewsx.frame.size.width, self.checkVC.playerViewsx.frame.size.height);
+            self.checkVC.playerViewdx.frame = curFramedx;
+        }
+        
+    }
+
+}
 - (IBAction)alphaChannelSliderChanged:(UISlider *)alphaChannelSlider{
     
-    
-    if ([segmentedTransizione selectedSegmentIndex] == 0){
-        if(_alphaChannelSlider.value >51 ){
-            nuovomassimodx= [self mappaValori:(_alphaChannelSlider.value/ 100.0) valoremassimocorrente:(_alphaChannelSlider.maximumValue/100) nuovomassimo:100.0f];
-            //cambia l'opacità dei video
-            self.checkVC.playerViewdx.alpha = nuovomassimodx/ 100.0;
-            self.checkVC.playerViewsx.alpha =  1.0-(nuovomassimodx/ 100.0);
-        }else if (_alphaChannelSlider.value<51){
-            nuovomassimosx = [self mappaValori:(_alphaChannelSlider.value/ 100.0) valoremassimocorrente:(_alphaChannelSlider.maximumValue/100) nuovomassimo:nuovomassimodx];
-            self.checkVC.playerViewdx.alpha = nuovomassimosx/ 100.0;
-            self.checkVC.playerViewsx.alpha =  1.0-(nuovomassimosx/ 100.0);
-        }
+if ([segmentedTransizione selectedSegmentIndex] == 0){
+
+            self.checkVC.playerViewdx.alpha = _alphaChannelSlider.value/ 100.0;
+            self.checkVC.playerViewsx.alpha =  1.0-(_alphaChannelSlider.value/ 100.0);
+        
     }
     else if ([segmentedTransizione selectedSegmentIndex] == 1){
         
@@ -905,18 +930,18 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
 {
     if ([[segue identifier] isEqualToString:@"popover"] || [[segue identifier] isEqualToString:@"popover3"]  )
     {
-        self.popSegue = (UIStoryboardPopoverSegue*)segue;
+        self.popSegue = [(UIStoryboardPopoverSegue *)segue popoverController];
         [[segue destinationViewController] setDelegate:self];
         chie =0;
     }
     if ([[segue identifier] isEqualToString:@"popover2"] || [[segue identifier] isEqualToString:@"popover4"] )
     {
-        
-        
-        self.popSegue = (UIStoryboardPopoverSegue*)segue;
+        self.popSegue =[(UIStoryboardPopoverSegue *)segue popoverController];
 
         [[segue destinationViewController] setDelegate:self];
         chie =1;
+
+
     }
     
     if ([segue.identifier isEqualToString:@"cpdc_check_embed"]) {
@@ -1123,7 +1148,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
                               delay:0.0f
                             options: UIViewAnimationOptionCurveEaseIn
                          animations:^{
-                             [scalette setFrame:CGRectMake(0.0f, 526.0f, scalette.frame.size.width, scalette.frame.size.height)];
+                             [scalette setFrame:CGRectMake(0.0f, 551.0f, scalette.frame.size.width, scalette.frame.size.height)];
                          }
                          completion:nil];
         

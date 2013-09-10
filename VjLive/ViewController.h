@@ -16,7 +16,7 @@
 #import "avPlayer.h"
 #import "ContainerController.h"
 #import "FXBlurView.h"
-
+#define kDeleteViewWidth 80
 
 @class avPlayer;
 @class AVPlayer;
@@ -25,8 +25,9 @@
 @interface ViewController : UIViewController<MPMediaPickerControllerDelegate,AVAudioPlayerDelegate>{
     UIPopoverController* popover;
     UIPopoverController* popover2;
-    id segui;
 
+    id segui;
+    CGPoint  initialPosition;
     NSURL *urlSongDestra;
     NSURL *urlSongSinistra;
     NSURL *urlVideoDestra;
@@ -137,7 +138,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *artista1;
 @property (weak, nonatomic) IBOutlet UILabel *artista2;
 
-@property (strong, nonatomic) UIStoryboardPopoverSegue* popSegue;
+@property (strong, nonatomic) UIPopoverController* popSegue;
 
 @property (strong, nonatomic) IBOutlet UIButton *bottone;
 @property (strong, nonatomic) IBOutlet UIButton *bottone2;

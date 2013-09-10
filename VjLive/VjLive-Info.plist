@@ -2,30 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-	</array>
-	<key>CFBundleIconFiles</key>
-	<array>
-		<string>RetinaAppIcon76x76</string>
-		<string>AppIcon76x76</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>it_IT</string>
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>AppIcon76x76.png</string>
+		<string>AppIcon76x76@2x.png</string>
+		<string>RetinaAppIcon76x76@2x.png</string>
+		<string>AppIcon72x72.png</string>
+		<string>AppIcon72x72@2x.png</string>
+	</array>
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
+			<key>UIPrerenderedIcon</key>
+			<true/>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>AppIcon76x76.png</string>
-				<string>AppIcon76x76@2x.png</string>
-				<string>RetinaAppIcon76x76@2x.png</string>
+				<string>AppIcon72x72.png</string>
+				<string>AppIcon72x72@2x.png</string>
 			</array>
 		</dict>
 	</dict>
@@ -45,6 +45,10 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>
