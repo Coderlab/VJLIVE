@@ -16,6 +16,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *titoloVideo;
 @property (nonatomic, weak) IBOutlet UILabel *durataVideo;
 @property (nonatomic, weak) IBOutlet UILabel *urlVideo;
+@property (weak, nonatomic) IBOutlet UILabel *artistaVideo;
 @property (nonatomic, weak) IBOutlet UIImageView *snapVideo;
 
 @end

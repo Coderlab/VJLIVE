@@ -8,6 +8,8 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "VideoCell.h"
+#import "FlatUIKit.h"
+
 @protocol PopOverSelectionDelegate;
 @protocol PopOverSelectionDelegate
 @optional

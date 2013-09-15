@@ -13,23 +13,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    // Override point for customization after application launch.
-    NSError *activationError = nil;
-    BOOL success = [session setActive: YES error: &activationError];
-    if (!success) {
-        NSLog(@"%@",activationError);
-    }else{
 
-        NSError *setCategoryError = nil;
-        BOOL success = [session
-                        setCategory: AVAudioSessionCategoryPlayback
-                        error: &setCategoryError];
-        
-        if (!success) {
-            NSLog(@"non sono riuscito a impostare la categoria perchè %@",setCategoryError);
-        }
-    }
+    // Set AudioSession
+    NSError *sessionError = nil;
+    [[AVAudioSession sharedInstance] setDelegate:self];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+    
+    /* Pick any one of them */
+    // 1. Overriding the output audio route
+    //UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
+    //AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(audioRouteOverride), &audioRouteOverride);
+    
+    // 2. Changing the default output audio route
+    UInt32 doChangeDefaultRoute = 1;
+    AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryDefaultToSpeaker, sizeof(doChangeDefaultRoute), &doChangeDefaultRoute);
+    
+    ContainerController *checkVC3;
+    ViewController *viewController;
+    viewController.checkVC = checkVC3;
+    [viewController.secondWindow setRootViewController:checkVC3];
     
     return YES;
 }
@@ -59,7 +61,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    OSStatus AudioSessionSetActive = FALSE;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 @end

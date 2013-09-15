@@ -16,7 +16,7 @@
 #import "avPlayer.h"
 #import "ContainerController.h"
 #import "FXBlurView.h"
-#define kDeleteViewWidth 80
+#import "FlatUIKit.h"
 
 @class avPlayer;
 @class AVPlayer;
@@ -81,9 +81,11 @@
 
 @property (weak, nonatomic) IBOutlet UIView *questoSiDeveVedere;
 @property (weak,nonatomic) ContainerController * checkVC;
+@property (weak,nonatomic) ContainerController * checkVC2;
+
 @property (weak, nonatomic) IBOutlet UISlider *timeSliderDx;
 @property (weak, nonatomic) IBOutlet UISlider *timeSliderSx;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedTransizione;
+@property (weak, nonatomic) IBOutlet FUISegmentedControl *segmentedTransizione;
 @property (weak, nonatomic) IBOutlet UILabel *labelTimeVideoDx;
 @property (weak, nonatomic) IBOutlet UILabel *labelTimeVideoSx;
 
@@ -120,16 +122,23 @@
 
 @property (strong, nonatomic) IBOutlet UISlider *sliderdx;
 @property (strong, nonatomic) IBOutlet UISlider *slidersx;
+@property (weak, nonatomic) IBOutlet UIButton *muteVideoDx;
+@property (weak, nonatomic) IBOutlet UIButton *muteVideoSx;
 
 
 
 
-@property (weak, nonatomic) IBOutlet UIButton *preloadedSx;
-@property (weak, nonatomic) IBOutlet UIButton *addVideoSx;
+@property (weak, nonatomic) IBOutlet UILabel *labelTempoSx;
+@property (weak, nonatomic) IBOutlet UILabel *labelTempoDx;
+@property (weak, nonatomic) IBOutlet FUIButton *preloadedSx;
+@property (weak, nonatomic) IBOutlet FUIButton *addVideoSx;
+@property (weak, nonatomic) IBOutlet FUIButton *preloadedDx;
+@property (weak, nonatomic) IBOutlet FUIButton *addVideoDx;
 @property (weak, nonatomic) IBOutlet UIButton *playSx;
 @property (weak, nonatomic) IBOutlet UIButton *muteSx;
 @property (weak, nonatomic) IBOutlet UIButton *stopSx;
 @property (weak, nonatomic) IBOutlet UIButton *loopSx;
+@property (weak, nonatomic) IBOutlet UIButton *loopDx;
 @property (weak, nonatomic) IBOutlet UIButton *playDx;
 
 

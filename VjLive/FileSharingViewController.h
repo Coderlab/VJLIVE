@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "VideoCell.h"
+#import "FlatUIKit.h"
 
 @class ViewController;
 @protocol PopOverSelectionDelegate;
@@ -29,4 +30,6 @@
 @property (strong,nonatomic) NSURL *url;
 @property (nonatomic,weak) id <PopOverSelectionDelegate> delegate;
 
+@property (weak, nonatomic) IBOutlet UITableView *primaTabella;
+@property (weak, nonatomic) IBOutlet UITableView *secondaTabella;
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "selezionaVideoMusicaliController.h"
+#import "UITableViewCell+FlatUI.h"
+#import "UIColor+FlatUI.h"
 
 @interface selezionaVideoMusicaliController ()
 
@@ -30,7 +32,17 @@
     [query addFilterPredicate:predicate];
     
     items = [query items];
+    //Set the separator color
+    self.primaTabella.separatorColor = [UIColor peterRiverColor];
     
+    //Set the background color
+    self.primaTabella.backgroundColor = [UIColor peterRiverColor];
+    //Set the separator color
+    self.secondaTabella.separatorColor = [UIColor peterRiverColor];
+    
+    //Set the background color
+    self.secondaTabella.backgroundColor = [UIColor peterRiverColor];
+
 }
 
 
@@ -62,10 +74,25 @@
 {
     
     static NSString *CellIdentifier = @"Cell";
-    VideoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+ //   VideoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     NSInteger row = indexPath.row;
     
     MPMediaItem* item = [items objectAtIndex:row];
+    
+    VideoCell *cell = [VideoCell configureFlatCellWithColor:[UIColor peterRiverColor] selectedColor:[UIColor belizeHoleColor] reuseIdentifier:CellIdentifier inTableView:tableView];
+    
+    if (!cell) {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        [cell configureFlatCellWithColor:[UIColor greenSeaColor] selectedColor:[UIColor cloudsColor]];
+        cell.cornerRadius = 5.f; //Optional
+        if (tableView.style == UITableViewStyleGrouped) {
+            cell.separatorHeight = 1.f; //Optional
+        }
+        else {
+            cell.separatorHeight = 0.;
+        }
+    }
+
     
     NSString* title = [item valueForProperty:MPMediaItemPropertyTitle];
     
@@ -75,8 +102,15 @@
     int sec = lroundf(secondi)%60;
     NSString *durataS = [NSString stringWithFormat:@"%d:%2.02d", min,sec];
     
+    NSString* artista = [item valueForProperty:MPMediaItemPropertyArtist];
+
+    
     cell.titoloVideo.text = title;
+    cell.titoloVideo.font = [UIFont flatFontOfSize:20.0];
     cell.durataVideo.text = durataS;
+    cell.artistaVideo.text = artista;
+    cell.artistaVideo.font =  [UIFont flatFontOfSize:18.0];
+
     MPMediaItemArtwork *artWork = [item valueForProperty:MPMediaItemPropertyArtwork];
     
     cell.snapVideo.image = [artWork imageWithSize:CGSizeMake(120, 70)];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <development version="4600" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
@@ -13,12 +13,12 @@
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CkF-SK-d6A" customClass="GradientButton">
-                                <rect key="frame" x="811" y="617" width="99" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CkF-SK-d6A" customClass="FUIButton">
+                                <rect key="frame" x="811" y="619" width="181" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Add Video">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add iTunes Video">
+                                    <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -30,12 +30,12 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4nZ-qc-FLw" customClass="GradientButton">
-                                <rect key="frame" x="201" y="619" width="99" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4nZ-qc-FLw" customClass="FUIButton">
+                                <rect key="frame" x="201" y="619" width="181" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Add Video">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add iTunes Video">
+                                    <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -48,11 +48,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0YT-vx-Tgp">
-                                <rect key="frame" x="630" y="667" width="50" height="50"/>
+                                <rect key="frame" x="634" y="670" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <color key="tintColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="playpause.png">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="selected" title="Play"/>
@@ -64,7 +65,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xny-kW-1ex">
-                                <rect key="frame" x="20" y="669" width="50" height="51"/>
+                                <rect key="frame" x="20" y="670" width="50" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" title="Play" image="playpause.png">
@@ -94,11 +95,11 @@
                                     <action selector="volumeSliderAvplayer2Changed:" destination="2" eventType="valueChanged" id="hcK-Db-FYt"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c2B-KJ-eCF" customClass="GradientButton">
-                                <rect key="frame" x="175" y="670" width="59" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c2B-KJ-eCF">
+                                <rect key="frame" x="143" y="670" width="50" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Mute">
+                                <state key="normal" image="volumeon.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -109,11 +110,11 @@
                                     <action selector="muteVideoSx:" destination="2" eventType="touchUpInside" id="D7t-bn-7VT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9gy-QG-fEc" customClass="GradientButton">
-                                <rect key="frame" x="785" y="670" width="59" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9gy-QG-fEc">
+                                <rect key="frame" x="753" y="670" width="50" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Mute">
+                                <state key="normal" image="volumeon.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -124,13 +125,13 @@
                                     <action selector="muteVideoDx:" destination="2" eventType="touchUpInside" id="TOU-mq-nc0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a3N-99-yAv" customClass="GradientButton">
-                                <rect key="frame" x="20" y="619" width="173" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a3N-99-yAv" customClass="FUIButton">
+                                <rect key="frame" x="20" y="619" width="181" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Add preloaded video">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,12 +142,12 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="emJ-IC-xDs" customClass="GradientButton">
-                                <rect key="frame" x="630" y="617" width="173" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="emJ-IC-xDs" customClass="FUIButton">
+                                <rect key="frame" x="630" y="619" width="181" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Add preloaded video">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -158,11 +159,11 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lac-nT-8DH" customClass="GradientButton">
-                                <rect key="frame" x="852" y="670" width="58" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lac-nT-8DH">
+                                <rect key="frame" x="839" y="670" width="50" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Loop">
+                                <state key="normal" image="loopOff.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -173,8 +174,8 @@
                                     <action selector="playerItemmmDidReachEnd" destination="2" eventType="touchUpInside" id="7b8-PZ-MQW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P5q-55-YOr">
-                                <rect key="frame" x="680" y="667" width="49" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="P5q-55-YOr">
+                                <rect key="frame" x="692" y="670" width="49" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Stop" image="stop.png">
@@ -188,8 +189,8 @@
                                     <action selector="stopMovie" destination="2" eventType="touchUpInside" id="7GB-1e-YHq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T6o-xk-vlr">
-                                <rect key="frame" x="70" y="669" width="50" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="T6o-xk-vlr">
+                                <rect key="frame" x="81" y="670" width="50" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Stop" image="stop.png">
@@ -222,15 +223,16 @@
                             <containerView clipsSubviews="YES" contentMode="scaleToFill" id="Ulu-1b-YPE">
                                 <rect key="frame" x="148" y="11" width="728" height="410"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="pXk-rX-FiT" kind="embed" identifier="cpdc_check_embed" id="Rxt-Dr-eb8"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HNj-JD-nLP" customClass="GradientButton">
-                                <rect key="frame" x="242" y="670" width="58" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HNj-JD-nLP">
+                                <rect key="frame" x="228" y="670" width="50" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Loop">
+                                <state key="normal" image="loopOff.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -251,7 +253,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.2274509804" green="0.46666666670000001" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
                             </slider>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="UHZ-3k-EHb">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="UHZ-3k-EHb" customClass="FUISegmentedControl">
                                 <rect key="frame" x="437" y="555" width="151" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -266,7 +268,7 @@
                             <view contentMode="scaleToFill" id="nsM-Gg-bW5">
                                 <rect key="frame" x="0.0" y="507" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.043137254899999998" green="0.41568627450000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S2v-QO-Yqf">
                                 <rect key="frame" x="630" y="507" width="362" height="44"/>
@@ -285,7 +287,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view clearsContextBeforeDrawing="NO" alpha="0.90000000000000002" contentMode="top" id="JJ2-bF-In4" customClass="FXBlurView">
-                                <rect key="frame" x="0.0" y="722" width="1024" height="224"/>
+                                <rect key="frame" x="0.0" y="721" width="1024" height="224"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bve-iL-MTT">
@@ -293,7 +295,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
                                         <state key="normal" title="+">
-                                            <color key="titleColor" red="0.043137254901960784" green="0.41568627450980389" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted">
@@ -308,7 +310,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
                                         <state key="normal" title="+">
-                                            <color key="titleColor" red="0.043137254899999998" green="0.41568627450000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted">
@@ -318,21 +320,22 @@
                                             <action selector="showMediaPicker:" destination="2" eventType="touchUpInside" id="xQq-nY-dcr"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Canzone Uno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WXd-JI-HFN">
-                                        <rect key="frame" x="15" y="35" width="331" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WXd-JI-HFN">
+                                        <rect key="frame" x="15" y="35" width="331" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="19"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="tRH-NX-pr1">
                                         <rect key="frame" x="354" y="35" width="96" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lEa-WO-Ldi">
-                                        <rect key="frame" x="15" y="88" width="58" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lEa-WO-Ldi">
+                                        <rect key="frame" x="80" y="88" width="50" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Stop">
+                                        <state key="normal" image="stop.png">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -343,11 +346,11 @@
                                             <action selector="stopCanzonesx:" destination="2" eventType="touchUpInside" id="zfc-DH-tty"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mwd-zg-6do">
-                                        <rect key="frame" x="80" y="88" width="104" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mwd-zg-6do">
+                                        <rect key="frame" x="15" y="88" width="50" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Play/Pausa">
+                                        <state key="normal" image="playpause.png">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -359,7 +362,7 @@
                                         </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" id="r3I-aF-ZJH">
-                                        <rect key="frame" x="13" y="130" width="439" height="23"/>
+                                        <rect key="frame" x="13" y="140" width="439" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="maximumTrackTintColor" red="1" green="0.43529412150382996" blue="0.81176471710205078" alpha="1" colorSpace="calibratedRGB"/>
@@ -367,21 +370,22 @@
                                             <action selector="sliderValueChanged:" destination="2" eventType="valueChanged" id="bKF-GU-UWk"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Canzone Due" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ROQ-fy-Zii">
-                                        <rect key="frame" x="569" y="35" width="331" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ROQ-fy-Zii">
+                                        <rect key="frame" x="569" y="35" width="331" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="19"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="lRl-7G-f8d">
                                         <rect key="frame" x="908" y="35" width="96" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Ia-Wj-6pD">
-                                        <rect key="frame" x="681" y="88" width="58" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4Ia-Wj-6pD">
+                                        <rect key="frame" x="635" y="88" width="50" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Stop">
+                                        <state key="normal" image="stop.png">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -392,11 +396,11 @@
                                             <action selector="stopCanzonedx:" destination="2" eventType="touchUpInside" id="Oi6-q1-SOD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QEt-7L-vsk">
-                                        <rect key="frame" x="569" y="88" width="104" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QEt-7L-vsk">
+                                        <rect key="frame" x="570" y="88" width="50" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Play/Pausa">
+                                        <state key="normal" image="playpause.png">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -408,7 +412,7 @@
                                         </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" id="JJ2-J7-ZbG">
-                                        <rect key="frame" x="567" y="130" width="439" height="23"/>
+                                        <rect key="frame" x="567" y="140" width="439" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="maximumTrackTintColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -417,11 +421,11 @@
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="nVJ-zy-CSo">
-                                        <rect key="frame" x="567" y="160" width="439" height="23"/>
+                                        <rect key="frame" x="567" y="170" width="439" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="XoK-BV-9gZ">
-                                        <rect key="frame" x="13" y="160" width="439" height="23"/>
+                                        <rect key="frame" x="13" y="170" width="439" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -441,35 +445,36 @@
                                             <action selector="showHideView:" destination="2" eventType="touchUpInside" id="aeh-R1-hTY"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Artista Uno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RXO-Ew-BIK">
-                                        <rect key="frame" x="15" y="55" width="331" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RXO-Ew-BIK">
+                                        <rect key="frame" x="15" y="60" width="331" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="16"/>
-                                        <color key="textColor" red="0.29411764705882354" green="0.29411764705882354" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Artista Due" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rab-me-kAa">
-                                        <rect key="frame" x="569" y="55" width="331" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rab-me-kAa">
+                                        <rect key="frame" x="569" y="58" width="331" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="16"/>
-                                        <color key="textColor" red="0.29411764709999999" green="0.29411764709999999" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="deviceRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <gestureRecognizers/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="deviceRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="addVideoDx" destination="CkF-SK-d6A" id="FQm-gQ-boz"/>
                         <outlet property="addVideoSx" destination="4nZ-qc-FLw" id="EhQ-0u-fGe"/>
                         <outlet property="alphaChannelSlider" destination="HXs-Yx-R96" id="Qgf-75-4Bw"/>
                         <outlet property="artista1" destination="RXO-Ew-BIK" id="pn8-Fa-1ZX"/>
@@ -479,12 +484,18 @@
                         <outlet property="bottone3" destination="CkF-SK-d6A" id="IP1-cC-aC9"/>
                         <outlet property="cover1" destination="tRH-NX-pr1" id="eLG-Vv-7X1"/>
                         <outlet property="cover2" destination="lRl-7G-f8d" id="hw3-mk-6Y4"/>
+                        <outlet property="labelTempoDx" destination="S2v-QO-Yqf" id="Moh-Lh-FdQ"/>
+                        <outlet property="labelTempoSx" destination="qYl-gP-xdb" id="VEo-Um-2F8"/>
                         <outlet property="labelTimeVideoDx" destination="S2v-QO-Yqf" id="Axl-ym-f9q"/>
                         <outlet property="labelTimeVideoSx" destination="qYl-gP-xdb" id="L4z-Yu-UnB"/>
-                        <outlet property="loopSx" destination="HNj-JD-nLP" id="E4a-t1-cBi"/>
+                        <outlet property="loopDx" destination="lac-nT-8DH" id="3Qs-fK-uRV"/>
+                        <outlet property="loopSx" destination="HNj-JD-nLP" id="Q4b-Ja-V8K"/>
                         <outlet property="muteSx" destination="c2B-KJ-eCF" id="iKG-P4-WZL"/>
+                        <outlet property="muteVideoDx" destination="9gy-QG-fEc" id="voi-8b-Q3k"/>
+                        <outlet property="muteVideoSx" destination="c2B-KJ-eCF" id="FUp-0w-u4B"/>
                         <outlet property="playDx" destination="0YT-vx-Tgp" id="wd8-Ai-pdq"/>
                         <outlet property="playSx" destination="Xny-kW-1ex" id="XMb-BW-6tW"/>
+                        <outlet property="preloadedDx" destination="emJ-IC-xDs" id="alM-hP-8ar"/>
                         <outlet property="preloadedSx" destination="a3N-99-yAv" id="sdo-Lt-pBd"/>
                         <outlet property="questoSiDeveVedere" destination="Ulu-1b-YPE" id="dwO-k5-k4r"/>
                         <outlet property="scalette" destination="JJ2-bF-In4" id="PvU-fa-TKz"/>
@@ -535,7 +546,7 @@
                                                     <rect key="frame" x="114" y="-51" width="276" height="138"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Pwi-6F-wsd">
@@ -546,13 +557,21 @@
                                                     <rect key="frame" x="114" y="54" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DsL-LP-Dyy">
+                                                    <rect key="frame" x="114" y="32" width="216" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
+                                            <outlet property="artistaVideo" destination="DsL-LP-Dyy" id="GdK-u3-MXn"/>
                                             <outlet property="durataVideo" destination="Ij0-G3-bAa" id="C4B-Hs-Iot"/>
                                             <outlet property="snapVideo" destination="Pwi-6F-wsd" id="OV5-nu-ETc"/>
                                             <outlet property="titoloVideo" destination="dgQ-ta-Ov7" id="YEz-pE-OEJ"/>
@@ -591,7 +610,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="350" height="420"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.46666666670000001" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="separatorColor" red="0.23921568630000001" green="0.75294117650000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="Pzg-pV-HIK" customClass="VideoCell">
                                         <rect key="frame" x="0.0" y="22" width="350" height="36"/>
@@ -600,7 +619,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DXI-eK-wDk">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="DXI-eK-wDk">
                                                     <rect key="frame" x="5" y="-51" width="330" height="138"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
@@ -626,6 +645,9 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="primaTabella" destination="Tfz-EI-r6Q" id="PlD-Y9-bem"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IU0-dK-9bR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -643,7 +665,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="350" height="420"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.46666666670000001" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="separatorColor" red="0.23921568630000001" green="0.75294117650000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="tO5-c9-1Kq" customClass="VideoCell">
                                         <rect key="frame" x="0.0" y="22" width="350" height="36"/>
@@ -656,7 +678,7 @@
                                                     <rect key="frame" x="5" y="-51" width="330" height="138"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
@@ -679,6 +701,9 @@
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="350" height="420"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="secondaTabella" destination="FiP-eo-a31" id="HJP-Q4-3DN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYt-5c-2B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -708,7 +733,7 @@
                                                     <rect key="frame" x="114" y="-51" width="276" height="138"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5sH-8H-6M2">
@@ -719,13 +744,21 @@
                                                     <rect key="frame" x="114" y="54" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YBL-fj-fK4">
+                                                    <rect key="frame" x="114" y="32" width="216" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
+                                            <outlet property="artistaVideo" destination="YBL-fj-fK4" id="3iY-Qy-PBu"/>
                                             <outlet property="durataVideo" destination="02E-jz-u1c" id="8rL-xu-d1a"/>
                                             <outlet property="snapVideo" destination="5sH-8H-6M2" id="Hmj-4n-Tu4"/>
                                             <outlet property="titoloVideo" destination="I80-YR-h03" id="CYP-vs-8nI"/>
@@ -784,103 +817,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="loopOff.png" width="100" height="100"/>
         <image name="playpause.png" width="100" height="100"/>
         <image name="stop.png" width="100" height="100"/>
+        <image name="volumeon.png" width="100" height="100"/>
     </resources>
-    <classes>
-        <class className="ContainerController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="playerViewdx" candidateClass="avPlayer"/>
-                <relationship kind="outlet" name="playerViewsx" candidateClass="avPlayer"/>
-                <relationship kind="outlet" name="vistaGrande" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="FXBlurView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FXBlurView.h"/>
-        </class>
-        <class className="FileSharingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FileSharingViewController.h"/>
-        </class>
-        <class className="GradientButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
-        </class>
-        <class className="VideoCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="durataVideo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="snapVideo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="titoloVideo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="urlVideo" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="alphaChannelSliderChanged:" candidateClass="UISlider"/>
-                <relationship kind="action" name="muteVideoDx:"/>
-                <relationship kind="action" name="muteVideoSx:"/>
-                <relationship kind="action" name="pausaPlayCanzoneSelezionatadx"/>
-                <relationship kind="action" name="pausaPlayCanzoneSelezionatasx"/>
-                <relationship kind="action" name="playerItemmDidReachEnd"/>
-                <relationship kind="action" name="playerItemmmDidReachEnd"/>
-                <relationship kind="action" name="segmentedChanged:"/>
-                <relationship kind="action" name="showHideView:"/>
-                <relationship kind="action" name="showMediaPicker2:"/>
-                <relationship kind="action" name="showMediaPicker:"/>
-                <relationship kind="action" name="sliderRateVideo:" candidateClass="UISlider"/>
-                <relationship kind="action" name="sliderRateVideodx:" candidateClass="UISlider"/>
-                <relationship kind="action" name="sliderValueChanged:" candidateClass="UISlider"/>
-                <relationship kind="action" name="sliderValueChangeddx:" candidateClass="UISlider"/>
-                <relationship kind="action" name="stopCanzonedx:"/>
-                <relationship kind="action" name="stopCanzonesx:"/>
-                <relationship kind="action" name="stopMovie"/>
-                <relationship kind="action" name="stopMovie2"/>
-                <relationship kind="action" name="volumeSliderAvplayer2Changed:" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="addVideoSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="alphaChannelSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="artista1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="artista2" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="bottone" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="bottone2" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="bottone3" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cover1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="cover2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelTimeVideoDx" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTimeVideoSx" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loopSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="muteSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="playDx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="playSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="preloadedSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="questoSiDeveVedere" candidateClass="UIView"/>
-                <relationship kind="outlet" name="scalette" candidateClass="FXBlurView"/>
-                <relationship kind="outlet" name="segmentedTransizione" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="sliderDurationDx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderDurationSx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderDx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderSx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderdx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="slidersx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="stopSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="timeSliderDx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="timeSliderSx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="titolo1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titolo2" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeSliderAvplayer2" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="avPlayer" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/avPlayer.h"/>
-        </class>
-        <class className="selezionaVideoMusicaliController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/selezionaVideoMusicaliController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="primaTabella" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="secondaTabella" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

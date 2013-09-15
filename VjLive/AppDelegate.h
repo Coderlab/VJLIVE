@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

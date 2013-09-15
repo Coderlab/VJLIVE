@@ -28,6 +28,7 @@
 
     [(AVPlayerLayer*)[self layer]setPlayer:player];
     [self setVideoFillMode:@"AVLayerVideoGravityResize"];
+    [self.player allowsExternalPlayback];
 }
 - (void)setVolume:(CGFloat)volume chi:(AVPlayer*)player{
     NSArray *audioTracks = [player.currentItem.asset tracksWithMediaType:AVMediaTypeAudio];

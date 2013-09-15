@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "UIPopoverController+FlatUI.h"
+#import "FUISegmentedControl.h"
 
 @interface ViewController()
 
@@ -17,96 +19,72 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  [_alphaChannelSlider setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
-    [_alphaChannelSlider setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
-    [_alphaChannelSlider setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
-                               forState:UIControlStateNormal];
-    [_alphaChannelSlider setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
-                               forState:UIControlStateNormal];
-    [_volumeSliderAvplayer2 setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
-    [_volumeSliderAvplayer2 setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
-    [_volumeSliderAvplayer2 setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
-                                     forState:UIControlStateNormal];
-    [_volumeSliderAvplayer2 setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
-                                     forState:UIControlStateNormal];
-    
-    [_timeSliderDx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
-    [_timeSliderDx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
-    [_timeSliderDx setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
-                                        forState:UIControlStateNormal];
-    [_timeSliderDx setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
-                                        forState:UIControlStateNormal];
+    [self.labelTempoDx setFont:[UIFont flatFontOfSize:35.0]];
+    [self.labelTempoSx setFont:[UIFont flatFontOfSize:35.0]];
+    [self.artista1 setFont:[UIFont flatFontOfSize:20.0]];
+    [self.artista2 setFont:[UIFont flatFontOfSize:20.0]];
+    [self.titolo1 setFont:[UIFont flatFontOfSize:25.0]];
+    [self.titolo2 setFont:[UIFont flatFontOfSize:25.0]];
 
-    [_timeSliderSx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
-    [_timeSliderSx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
-    [_timeSliderSx setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
-                               forState:UIControlStateNormal];
-    [_timeSliderSx setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
-                               forState:UIControlStateNormal];
-    
-    
-    [_sliderDx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
-    [_sliderDx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
-    [_sliderDx setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
-                               forState:UIControlStateNormal];
-    [_sliderDx setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
-                               forState:UIControlStateNormal];
+    [self.alphaChannelSlider configureFlatSliderWithTrackColor:[UIColor silverColor]
+                                     progressColor:[UIColor peterRiverColor]
+                                        thumbColor:[UIColor belizeHoleColor]];
+    [self.volumeSliderAvplayer2 configureFlatSliderWithTrackColor:[UIColor silverColor]
+                                                 progressColor:[UIColor peterRiverColor]
+                                                    thumbColor:[UIColor belizeHoleColor]];
+    [self.timeSliderDx configureFlatSliderWithTrackColor:[UIColor silverColor]
+                                                 progressColor:[UIColor peterRiverColor]
+                                                    thumbColor:[UIColor belizeHoleColor]];
+    [self.timeSliderSx configureFlatSliderWithTrackColor:[UIColor silverColor]
+                                                 progressColor:[UIColor peterRiverColor]
+                                                    thumbColor:[UIColor belizeHoleColor]];
+    [self.sliderDx configureFlatSliderWithTrackColor:[UIColor silverColor]
+                                                 progressColor:[UIColor peterRiverColor]
+                                                    thumbColor:[UIColor belizeHoleColor]];
+    [self.sliderSx configureFlatSliderWithTrackColor:[UIColor silverColor]
+                                                 progressColor:[UIColor peterRiverColor]
+                                                    thumbColor:[UIColor belizeHoleColor]];
+    [self.sliderdx configureFlatSliderWithTrackColor:[UIColor silverColor]
+                                                 progressColor:[UIColor peterRiverColor]
+                                                    thumbColor:[UIColor belizeHoleColor]];
+    [self.slidersx configureFlatSliderWithTrackColor:[UIColor silverColor]
+                                                 progressColor:[UIColor peterRiverColor]
+                                                    thumbColor:[UIColor belizeHoleColor]];
+    [self.sliderDurationDx configureFlatSliderWithTrackColor:[UIColor silverColor]
+                                       progressColor:[UIColor peterRiverColor]
+                                          thumbColor:[UIColor belizeHoleColor]];
+    [self.sliderDurationSx configureFlatSliderWithTrackColor:[UIColor silverColor]
+                                       progressColor:[UIColor peterRiverColor]
+                                          thumbColor:[UIColor belizeHoleColor]];
 
-    [_sliderSx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
-    [_sliderSx setThumbImage: [UIImage imageNamed:@"thumb.png"] forState:UIControlStateHighlighted];
-    [_sliderSx setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"]
-                           forState:UIControlStateNormal];
-    [_sliderSx setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"]
-                           forState:UIControlStateNormal];
-    /* MODIFICARE LO STILE DEL SEGMENT SPOSTA - FADE 
-    CGRect rect = CGRectMake(0, 0, 1, 1);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [[UIColor blackColor] CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *transparentImage = UIGraphicsGetImageFromCurrentImageContext();
-    CGRect rect2= CGRectMake(0, 0, 1, 1);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context2 = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context2, [[UIColor whiteColor] CGColor]);
-    CGContextFillRect(context2, rect2);
-    UIImage *transparentImage2 = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIFont fontWithName:@"Helvetica Neue" size:12], UITextAttributeFont,
-                                [UIColor whiteColor], UITextAttributeTextColor, nil];
-    [segmentedTransizione setTitleTextAttributes:attributes forState:UIControlStateNormal];
-    
-    NSDictionary *attributes2 = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIFont fontWithName:@"Helvetica Neue" size:12], UITextAttributeFont,
-                                [UIColor blackColor], UITextAttributeTextColor, nil];
-    [segmentedTransizione setTitleTextAttributes:attributes2 forState:UIControlStateSelected];
-    
-    NSDictionary *highlightedAttributes = [NSDictionary
-                                           dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
-    [segmentedTransizione setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
-    
-    [self.segmentedTransizione setBackgroundImage:transparentImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    
-    [self.segmentedTransizione setBackgroundImage:transparentImage2 forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
 
-    [self.segmentedTransizione setBackgroundImage:transparentImage2 forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-
-    [self.segmentedTransizione setDividerImage:transparentImage forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    */
     //setto la variabile per far andare su e giu la vista "musica"
     su=0;
     
+    [self.loopDx setImage:[UIImage imageNamed:@"loop"] forState:UIControlStateHighlighted];
+    [self.loopSx setImage:[UIImage imageNamed:@"loop"] forState:UIControlStateHighlighted];
+    [self.preloadedSx setButtonColor:[UIColor belizeHoleColor]];
+    [self.preloadedDx setButtonColor:[UIColor belizeHoleColor]];
+
+    [self.addVideoSx setButtonColor:[UIColor belizeHoleColor]];
+    [self.addVideoDx setButtonColor:[UIColor belizeHoleColor]];
+
+    
+    //[self.preloadedSx setCornerRadius:9.0];
+    [self.segmentedTransizione setCornerRadius:0.0];
+    [self.segmentedTransizione setSelectedColor:[UIColor peterRiverColor]];
+    
     dispatch_queue_t queue = dispatch_queue_create("altro",NULL);
     dispatch_async(queue, ^{
-        scalette.tintColor = [UIColor blackColor];
+        scalette.tintColor = [UIColor midnightBlueColor];
     });
     mutedx = 0;
     mutesx  = 0;
     loopdx =0;
     loopsx =0;
     chie=0;
+    
+    
     
     //Riconosce lo slide delle dita che muove la vista delle canzoni
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
@@ -138,6 +116,11 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     tapGestureTimesx.numberOfTapsRequired = 1;
     [_labelTimeVideoSx addGestureRecognizer:tapGestureTimesx];
     
+    self.preloadedSx.titleLabel.font = [UIFont flatFontOfSize:18.0];
+    self.addVideoSx.titleLabel.font = [UIFont flatFontOfSize:18.0];
+
+    self.preloadedDx.titleLabel.font = [UIFont flatFontOfSize:18.0];
+    self.addVideoDx.titleLabel.font = [UIFont flatFontOfSize:18.0];
     
     toccoTimeSx =0;
     toccoTimeDx =0;
@@ -173,7 +156,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         
         
         self.checkVC.view.frame = screenBounds;
-        [self.secondWindow addSubview:self.checkVC.vistaGrande];
+     //   [self.secondWindow addSubview:self.checkVC.vistaGrande];
         
         self.secondWindow.hidden = NO;
         [self.secondWindow setBackgroundColor:[UIColor blackColor]];
@@ -258,7 +241,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         
         
         self.checkVC.view.frame = screenBounds;
-        [self.secondWindow addSubview:self.checkVC.vistaGrande];
+        //[self.secondWindow addSubview:self.checkVC.vistaGrande];
         
         self.secondWindow.hidden = NO;
         [self.secondWindow setBackgroundColor:[UIColor blackColor]];
@@ -559,10 +542,12 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         
         [self.checkVC.playerViewsx setVolume:0 chi:self.checkVC.playerViewsx.player];
 
-        
+        [self.muteVideoSx setImage:[UIImage imageNamed:@"volumeoff"] forState:UIControlStateNormal];
+
         mutesx=1;
     }else if(mutesx==1){
         [self.checkVC.playerViewsx setVolume:(1-_volumeSliderAvplayer2.value) chi:self.checkVC.playerViewsx.player];
+        [self.muteVideoSx setImage:[UIImage imageNamed:@"volumeon"] forState:UIControlStateNormal];
 
         mutesx =0;
     }
@@ -576,10 +561,12 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     if(mutedx ==0){
         [self.checkVC.playerViewdx setVolume:0 chi:self.checkVC.playerViewdx.player];
         mutedx=1;
+        [self.muteVideoDx setImage:[UIImage imageNamed:@"volumeoff"] forState:UIControlStateNormal];
 
         
     }else if(mutedx ==1){
         [self.checkVC.playerViewdx setVolume:_volumeSliderAvplayer2.value chi:self.checkVC.playerViewdx.player];
+        [self.muteVideoDx setImage:[UIImage imageNamed:@"volumeon"] forState:UIControlStateNormal];
 
         mutedx =0;
     }
@@ -886,11 +873,16 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
                                                  selector:@selector(playerItemDidReachEnd:)
                                                      name:AVPlayerItemDidPlayToEndTimeNotification
                                                    object:[self.checkVC.playerVideo currentItem]];
+        [self.loopDx setImage:[UIImage imageNamed:@"loop"] forState:UIControlStateNormal];
+
+
         loopdx = 1;
     }else{
         //se c'è già, lo tolgo
         [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:[self.checkVC.playerVideo currentItem]];
         loopdx = 0;
+        [self.loopDx setImage:[UIImage imageNamed:@"loopOff"] forState:UIControlStateNormal];
+
     }
 }
 
@@ -903,10 +895,14 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
                                                  selector:@selector(playerItemDidReachEnd:)
                                                      name:AVPlayerItemDidPlayToEndTimeNotification
                                                    object:[self.checkVC.playerVideosx currentItem]];
+        [self.loopSx setImage:[UIImage imageNamed:@"loop"] forState:UIControlStateNormal];
+
         loopsx = 1;
     }else{
         //se c'è già, lo tolgo
         [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:[self.checkVC.playerVideosx currentItem]];
+        [self.loopSx setImage:[UIImage imageNamed:@"loopOff"] forState:UIControlStateNormal];
+
         loopsx = 0;
     }
 }
@@ -931,12 +927,14 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     if ([[segue identifier] isEqualToString:@"popover"] || [[segue identifier] isEqualToString:@"popover3"]  )
     {
         self.popSegue = [(UIStoryboardPopoverSegue *)segue popoverController];
+         [self.popSegue configureFlatPopoverWithBackgroundColor:[UIColor belizeHoleColor] cornerRadius:10.0];
         [[segue destinationViewController] setDelegate:self];
         chie =0;
     }
     if ([[segue identifier] isEqualToString:@"popover2"] || [[segue identifier] isEqualToString:@"popover4"] )
     {
         self.popSegue =[(UIStoryboardPopoverSegue *)segue popoverController];
+        [self.popSegue configureFlatPopoverWithBackgroundColor:[UIColor belizeHoleColor] cornerRadius:10.0];
 
         [[segue destinationViewController] setDelegate:self];
         chie =1;

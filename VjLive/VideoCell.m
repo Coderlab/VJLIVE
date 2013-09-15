@@ -13,7 +13,7 @@
 @synthesize durataVideo = _durataVideo;
 @synthesize urlVideo = _urlVideo;
 @synthesize snapVideo = _snapVideo;
-
+@synthesize artistaVideo = _artistaVideo;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
