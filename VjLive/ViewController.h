@@ -18,11 +18,12 @@
 #import "FXBlurView.h"
 #import "FlatUIKit.h"
 
+
 @class avPlayer;
 @class AVPlayer;
 
 
-@interface ViewController : UIViewController<MPMediaPickerControllerDelegate,AVAudioPlayerDelegate>{
+@interface ViewController : UIViewController<MPMediaPickerControllerDelegate,AVAudioPlayerDelegate,AVAudioRecorderDelegate>{
     UIPopoverController* popover;
     UIPopoverController* popover2;
 
@@ -74,10 +75,11 @@
     MPMediaPickerController* picker2;
     MPMediaPickerController* picker;
     MPMediaPickerController* picker3;
-    
 
+    
 }
 
+@property (nonatomic,retain) IBOutlet UIButton *recButton;
 
 @property (weak, nonatomic) IBOutlet UIView *questoSiDeveVedere;
 @property (weak,nonatomic) ContainerController * checkVC;
@@ -124,12 +126,14 @@
 @property (strong, nonatomic) IBOutlet UISlider *slidersx;
 @property (weak, nonatomic) IBOutlet UIButton *muteVideoDx;
 @property (weak, nonatomic) IBOutlet UIButton *muteVideoSx;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
 
 
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTempoSx;
 @property (weak, nonatomic) IBOutlet UILabel *labelTempoDx;
+@property (weak, nonatomic) IBOutlet UILabel *labelNomeVideoDx;
 @property (weak, nonatomic) IBOutlet FUIButton *preloadedSx;
 @property (weak, nonatomic) IBOutlet FUIButton *addVideoSx;
 @property (weak, nonatomic) IBOutlet FUIButton *preloadedDx;
@@ -140,6 +144,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *loopSx;
 @property (weak, nonatomic) IBOutlet UIButton *loopDx;
 @property (weak, nonatomic) IBOutlet UIButton *playDx;
+@property (weak, nonatomic) IBOutlet UIView *separatorView;
+@property (weak, nonatomic) IBOutlet UIButton *pausaPlayCanzoneSx;
+@property (weak, nonatomic) IBOutlet UIButton *pausaPlayCanzoneDx;
 
 
 @property (strong, nonatomic) IBOutlet UILabel *titolo1;

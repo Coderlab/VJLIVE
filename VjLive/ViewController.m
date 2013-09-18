@@ -13,16 +13,17 @@
 @interface ViewController()
 
 @end
+
 static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPlayerDemoPlaybackViewControllerStatusObservationContext;
 @implementation ViewController
-@synthesize scalette,su,delegate,chie,sliderDurationSx,sliderDurationDx,segmentedTransizione;
+@synthesize scalette,su,delegate,chie,sliderDurationSx,sliderDurationDx,segmentedTransizione,recButton;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.labelTempoDx setFont:[UIFont flatFontOfSize:35.0]];
     [self.labelTempoSx setFont:[UIFont flatFontOfSize:35.0]];
-    [self.artista1 setFont:[UIFont flatFontOfSize:20.0]];
-    [self.artista2 setFont:[UIFont flatFontOfSize:20.0]];
+    [self.artista1 setFont:[UIFont flatFontOfSize:15.0]];
+    [self.artista2 setFont:[UIFont flatFontOfSize:15.0]];
     [self.titolo1 setFont:[UIFont flatFontOfSize:25.0]];
     [self.titolo2 setFont:[UIFont flatFontOfSize:25.0]];
 
@@ -73,11 +74,9 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     //[self.preloadedSx setCornerRadius:9.0];
     [self.segmentedTransizione setCornerRadius:0.0];
     [self.segmentedTransizione setSelectedColor:[UIColor peterRiverColor]];
+    self.view.backgroundColor = [UIColor midnightBlueColor];
+    scalette.tintColor = [UIColor midnightBlueColor];
     
-    dispatch_queue_t queue = dispatch_queue_create("altro",NULL);
-    dispatch_async(queue, ^{
-        scalette.tintColor = [UIColor midnightBlueColor];
-    });
     mutedx = 0;
     mutesx  = 0;
     loopdx =0;
@@ -134,6 +133,10 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     videoItemSinistra = [[AVPlayerItem alloc]init];
     videoItemDestra = [[AVPlayerItem alloc]init];
 
+
+    AVAudioSession *audioSession  = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [audioSession setActive:YES error:nil];
 }
 -(void)viewDidAppear:(BOOL)animated{
     [self controllaseceunoschermo];
@@ -169,8 +172,10 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     }
 
 }
+
 -(void)viewWillDisappear:(BOOL)animated{
     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+
 }
 - (void)handleTapGesture:(UITapGestureRecognizer *)sender {
     
@@ -214,6 +219,32 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     self.checkVC.playerViewsx.alpha = 1.0 - (_alphaChannelSlider.value/ 100.0);
     
 }
+- (void)changeColor:(UIColor*)colore{
+    [UIView animateWithDuration:1.25 animations:^{
+        // No need to set a flag, just test the current colour.
+        if ([self.view.backgroundColor isEqual:[UIColor midnightBlueColor]]) {
+            self.view.backgroundColor = colore;
+            self.separatorView.backgroundColor = [UIColor midnightBlueColor];
+            self.labelTempoSx.textColor = colore;
+            self.labelTempoDx.textColor = colore;
+            self.titolo1.textColor = [UIColor belizeHoleColor];
+            self.titolo2.textColor = [UIColor belizeHoleColor];
+            self.artista1.textColor = [UIColor belizeHoleColor];
+            self.artista2.textColor = [UIColor belizeHoleColor];
+        } else {
+           self.view.backgroundColor = [UIColor midnightBlueColor];
+           self.separatorView.backgroundColor = colore;
+           self.labelTempoSx.textColor = [UIColor blackColor];
+           self.labelTempoDx.textColor = [UIColor blackColor];
+            self.titolo1.textColor = colore;
+            self.titolo2.textColor = colore;
+            self.artista1.textColor = colore;
+            self.artista2.textColor = colore;
+        }
+    }];
+    
+}
+
 
 
 - (void)setUpScreenConnectionNotificationHandlers
@@ -434,7 +465,9 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     
     if([_playDx.titleLabel.text isEqualToString:@"Pause"]){
+        [_playDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
         [_playDx setTitle:@"Play" forState:UIControlStateNormal];
+
     }
     
     [self.checkVC.playerViewdx.player pause];
@@ -446,7 +479,9 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     
     if([_playSx.titleLabel.text isEqualToString:@"Pause"]){
+          [_playSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
         [_playSx setTitle:@"Play" forState:UIControlStateNormal];
+
     }
     
     [self.checkVC.playerViewsx.player pause];
@@ -482,6 +517,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     //appena selezionato il video dismette la vista popover di selezione video
     [self.popSegue dismissPopoverAnimated:YES];
+
     
     if (chie == 0){
         //Video di destra
@@ -508,6 +544,8 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         self.checkVC.playerVideo.actionAtItemEnd = AVPlayerActionAtItemEndNone;
         
         [self setSlider];
+
+        
     }else if(chie == 1){
         
         
@@ -946,6 +984,13 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
         self.checkVC = segue.destinationViewController;
         segui = segue.destinationViewController;
     }
+    if ([segue.identifier isEqualToString:@"settings"]) {
+
+        self.popSegue =[(UIStoryboardPopoverSegue *)segue popoverController];
+        [self.popSegue configureFlatPopoverWithBackgroundColor:[UIColor belizeHoleColor] cornerRadius:10.0];
+        [[segue destinationViewController] setDelegate:self];
+
+    }
 }
 
 
@@ -1185,10 +1230,12 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     
     // pausa e play del player audio
     if(player.playing){
-        
+        [_pausaPlayCanzoneSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
         [player pause];
     }else if(!player.playing){
         [self sliderValueChangeddx:_sliderdx];
+        [_pausaPlayCanzoneSx setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+
         [player play];
         
     }
@@ -1200,10 +1247,13 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     
     // pausa e play del player audio
     if(player2.playing){
-        
+        [_pausaPlayCanzoneDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
+
         [player2 pause];
     }else if(!player2.playing){
         [self sliderValueChanged:_slidersx];
+        [_pausaPlayCanzoneDx setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+
         [player2 play];
         
     }

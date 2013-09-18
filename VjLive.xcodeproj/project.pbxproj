@@ -11,6 +11,10 @@
 		7007005417D3F46A0055A530 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7007005317D3F38C0055A530 /* FXBlurView.m */; };
 		701B47AC17E318DF00EEFD15 /* slider_maximum.png in Resources */ = {isa = PBXBuildFile; fileRef = 701B47AA17E318DF00EEFD15 /* slider_maximum.png */; };
 		701B47AD17E318DF00EEFD15 /* slider_minimum.png in Resources */ = {isa = PBXBuildFile; fileRef = 701B47AB17E318DF00EEFD15 /* slider_minimum.png */; };
+		702E479D17E9CF3E0035891A /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 702E479C17E9CF3E0035891A /* gear.png */; };
+		702E47A017E9F91B0035891A /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 702E479E17E9F91B0035891A /* sun.png */; };
+		702E47A117E9F91B0035891A /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 702E479F17E9F91B0035891A /* moon.png */; };
+		70517B9917E92ED200ED2D7E /* settingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70517B9817E92ED200ED2D7E /* settingsViewController.m */; };
 		7054837117D0D21100FC83DE /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7054837017D0D21100FC83DE /* Default-Landscape~ipad.png */; };
 		7054837317D0D21400FC83DE /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7054837217D0D21400FC83DE /* Default-Landscape@2x~ipad.png */; };
 		7054B9A317C6174F00BA5483 /* selezionaVideoMusicaliController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7054B9A217C6174F00BA5483 /* selezionaVideoMusicaliController.m */; };
@@ -92,6 +96,11 @@
 		7007005317D3F38C0055A530 /* FXBlurView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		701B47AA17E318DF00EEFD15 /* slider_maximum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_maximum.png; sourceTree = "<group>"; };
 		701B47AB17E318DF00EEFD15 /* slider_minimum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_minimum.png; sourceTree = "<group>"; };
+		702E479C17E9CF3E0035891A /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		702E479E17E9F91B0035891A /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
+		702E479F17E9F91B0035891A /* moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moon.png; sourceTree = "<group>"; };
+		70517B9717E92ED200ED2D7E /* settingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingsViewController.h; sourceTree = "<group>"; };
+		70517B9817E92ED200ED2D7E /* settingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingsViewController.m; sourceTree = "<group>"; };
 		7054837017D0D21100FC83DE /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		7054837217D0D21400FC83DE /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "../Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		7054B9A117C6174F00BA5483 /* selezionaVideoMusicaliController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selezionaVideoMusicaliController.h; sourceTree = "<group>"; };
@@ -329,6 +338,8 @@
 				7054B9A217C6174F00BA5483 /* selezionaVideoMusicaliController.m */,
 				FA4AA7F0172B030C00C5B3F3 /* ViewController.h */,
 				FA4AA7F1172B030C00C5B3F3 /* ViewController.m */,
+				70517B9717E92ED200ED2D7E /* settingsViewController.h */,
+				70517B9817E92ED200ED2D7E /* settingsViewController.m */,
 				FA0B6FBC1737C04D00078572 /* avPlayer.h */,
 				FA0B6FBD1737C04D00078572 /* avPlayer.m */,
 				7007005217D3F38C0055A530 /* FXBlurView.h */,
@@ -341,6 +352,9 @@
 		FA4AA7DC172B030C00C5B3F3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				702E479E17E9F91B0035891A /* sun.png */,
+				702E479F17E9F91B0035891A /* moon.png */,
+				702E479C17E9CF3E0035891A /* gear.png */,
 				706F712517E3D35100F6D424 /* loop.png */,
 				706F712617E3D35100F6D424 /* loop@2x.png */,
 				706F712717E3D35100F6D424 /* loopOff.png */,
@@ -464,6 +478,9 @@
 				706F713E17E3D35100F6D424 /* volumeoff@2x.png in Resources */,
 				706F713F17E3D35100F6D424 /* volumeon.png in Resources */,
 				706F714017E3D35100F6D424 /* volumeon@2x.png in Resources */,
+				702E479D17E9CF3E0035891A /* gear.png in Resources */,
+				702E47A017E9F91B0035891A /* sun.png in Resources */,
+				702E47A117E9F91B0035891A /* moon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +519,7 @@
 				70B84C1117C3DC440077178C /* ContainerController.m in Sources */,
 				7054B9A317C6174F00BA5483 /* selezionaVideoMusicaliController.m in Sources */,
 				70DCFEE217C96A7100B05FF9 /* WaveformImageView.m in Sources */,
+				70517B9917E92ED200ED2D7E /* settingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
