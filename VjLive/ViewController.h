@@ -65,6 +65,7 @@
     NSTimer *sliderTimerVideoSx;
     CGFloat nuovomassimodx;
     CGFloat nuovomassimosx;
+    CGRect scaletteprima;
     CGRect curFramesx;
     CGRect curFramedx;
     CGRect curFrameAlpha;
@@ -76,14 +77,13 @@
     MPMediaPickerController* picker;
     MPMediaPickerController* picker3;
 
-    
+    UIPushBehavior *pushBehavior;
 }
-
-@property (nonatomic,retain) IBOutlet UIButton *recButton;
 
 @property (weak, nonatomic) IBOutlet UIView *questoSiDeveVedere;
 @property (weak,nonatomic) ContainerController * checkVC;
-@property (weak,nonatomic) ContainerController * checkVC2;
+@property (nonatomic) UIDynamicAnimator* animator;
+@property(nonatomic) CGPoint lastGestureVelocity;
 
 @property (weak, nonatomic) IBOutlet UISlider *timeSliderDx;
 @property (weak, nonatomic) IBOutlet UISlider *timeSliderSx;
@@ -147,7 +147,8 @@
 @property (weak, nonatomic) IBOutlet UIView *separatorView;
 @property (weak, nonatomic) IBOutlet UIButton *pausaPlayCanzoneSx;
 @property (weak, nonatomic) IBOutlet UIButton *pausaPlayCanzoneDx;
-
+@property (weak, nonatomic) IBOutlet UIButton *musicButton;
+-(IBAction)showMusic:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *titolo1;
 @property (strong, nonatomic) IBOutlet UILabel *titolo2;
@@ -165,7 +166,7 @@
 @property (strong,nonatomic)    id delegate;
 
 
-@property (weak, nonatomic) IBOutlet FXBlurView *scalette;
+@property (weak, nonatomic) IBOutlet UIView *scalette;
 @property (strong, nonatomic) NSURL *urlVideo;
 
 @property (readwrite,nonatomic) NSInteger su;

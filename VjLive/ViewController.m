@@ -16,7 +16,7 @@
 
 static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPlayerDemoPlaybackViewControllerStatusObservationContext;
 @implementation ViewController
-@synthesize scalette,su,delegate,chie,sliderDurationSx,sliderDurationDx,segmentedTransizione,recButton;
+@synthesize scalette,su,delegate,chie,sliderDurationSx,sliderDurationDx,segmentedTransizione,animator,lastGestureVelocity;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -26,39 +26,39 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     [self.artista2 setFont:[UIFont flatFontOfSize:15.0]];
     [self.titolo1 setFont:[UIFont flatFontOfSize:25.0]];
     [self.titolo2 setFont:[UIFont flatFontOfSize:25.0]];
-
+    
     [self.alphaChannelSlider configureFlatSliderWithTrackColor:[UIColor silverColor]
-                                     progressColor:[UIColor peterRiverColor]
-                                        thumbColor:[UIColor belizeHoleColor]];
+                                                 progressColor:[UIColor peterRiverColor]
+                                                    thumbColor:[UIColor belizeHoleColor]];
     [self.volumeSliderAvplayer2 configureFlatSliderWithTrackColor:[UIColor silverColor]
-                                                 progressColor:[UIColor peterRiverColor]
-                                                    thumbColor:[UIColor belizeHoleColor]];
+                                                    progressColor:[UIColor peterRiverColor]
+                                                       thumbColor:[UIColor belizeHoleColor]];
     [self.timeSliderDx configureFlatSliderWithTrackColor:[UIColor silverColor]
-                                                 progressColor:[UIColor peterRiverColor]
-                                                    thumbColor:[UIColor belizeHoleColor]];
+                                           progressColor:[UIColor peterRiverColor]
+                                              thumbColor:[UIColor belizeHoleColor]];
     [self.timeSliderSx configureFlatSliderWithTrackColor:[UIColor silverColor]
-                                                 progressColor:[UIColor peterRiverColor]
-                                                    thumbColor:[UIColor belizeHoleColor]];
+                                           progressColor:[UIColor peterRiverColor]
+                                              thumbColor:[UIColor belizeHoleColor]];
     [self.sliderDx configureFlatSliderWithTrackColor:[UIColor silverColor]
-                                                 progressColor:[UIColor peterRiverColor]
-                                                    thumbColor:[UIColor belizeHoleColor]];
+                                       progressColor:[UIColor peterRiverColor]
+                                          thumbColor:[UIColor belizeHoleColor]];
     [self.sliderSx configureFlatSliderWithTrackColor:[UIColor silverColor]
-                                                 progressColor:[UIColor peterRiverColor]
-                                                    thumbColor:[UIColor belizeHoleColor]];
+                                       progressColor:[UIColor peterRiverColor]
+                                          thumbColor:[UIColor belizeHoleColor]];
     [self.sliderdx configureFlatSliderWithTrackColor:[UIColor silverColor]
-                                                 progressColor:[UIColor peterRiverColor]
-                                                    thumbColor:[UIColor belizeHoleColor]];
+                                       progressColor:[UIColor peterRiverColor]
+                                          thumbColor:[UIColor belizeHoleColor]];
     [self.slidersx configureFlatSliderWithTrackColor:[UIColor silverColor]
-                                                 progressColor:[UIColor peterRiverColor]
-                                                    thumbColor:[UIColor belizeHoleColor]];
+                                       progressColor:[UIColor peterRiverColor]
+                                          thumbColor:[UIColor belizeHoleColor]];
     [self.sliderDurationDx configureFlatSliderWithTrackColor:[UIColor silverColor]
-                                       progressColor:[UIColor peterRiverColor]
-                                          thumbColor:[UIColor belizeHoleColor]];
+                                               progressColor:[UIColor peterRiverColor]
+                                                  thumbColor:[UIColor belizeHoleColor]];
     [self.sliderDurationSx configureFlatSliderWithTrackColor:[UIColor silverColor]
-                                       progressColor:[UIColor peterRiverColor]
-                                          thumbColor:[UIColor belizeHoleColor]];
-
-
+                                               progressColor:[UIColor peterRiverColor]
+                                                  thumbColor:[UIColor belizeHoleColor]];
+    
+    
     //setto la variabile per far andare su e giu la vista "musica"
     su=0;
     
@@ -66,29 +66,30 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     [self.loopSx setImage:[UIImage imageNamed:@"loop"] forState:UIControlStateHighlighted];
     [self.preloadedSx setButtonColor:[UIColor belizeHoleColor]];
     [self.preloadedDx setButtonColor:[UIColor belizeHoleColor]];
-
+    
     [self.addVideoSx setButtonColor:[UIColor belizeHoleColor]];
     [self.addVideoDx setButtonColor:[UIColor belizeHoleColor]];
-
+    
     
     //[self.preloadedSx setCornerRadius:9.0];
     [self.segmentedTransizione setCornerRadius:0.0];
     [self.segmentedTransizione setSelectedColor:[UIColor peterRiverColor]];
     self.view.backgroundColor = [UIColor midnightBlueColor];
-    scalette.tintColor = [UIColor midnightBlueColor];
+    
     
     mutedx = 0;
     mutesx  = 0;
     loopdx =0;
     loopsx =0;
     chie=0;
+    animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
-    
+    pushBehavior= [[UIPushBehavior alloc]initWithItems:@[scalette] mode:UIPushBehaviorModeInstantaneous];
     
     //Riconosce lo slide delle dita che muove la vista delle canzoni
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
     [scalette addGestureRecognizer:panRecognizer];
-
+    
     //Riconosce il doppio tap per riportare il rate dei video a 1
     UITapGestureRecognizer *tapGesturedx = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
     tapGesturedx.numberOfTapsRequired = 2;
@@ -117,7 +118,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     self.preloadedSx.titleLabel.font = [UIFont flatFontOfSize:18.0];
     self.addVideoSx.titleLabel.font = [UIFont flatFontOfSize:18.0];
-
+    
     self.preloadedDx.titleLabel.font = [UIFont flatFontOfSize:18.0];
     self.addVideoDx.titleLabel.font = [UIFont flatFontOfSize:18.0];
     
@@ -132,12 +133,29 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     picker3 = [[MPMediaPickerController alloc] init];
     videoItemSinistra = [[AVPlayerItem alloc]init];
     videoItemDestra = [[AVPlayerItem alloc]init];
-
-
-    AVAudioSession *audioSession  = [AVAudioSession sharedInstance];
-    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    [audioSession setActive:YES error:nil];
+    
+    
 }
+
+-(IBAction)showMusic:(id)sender{
+        __block CGPoint imageViewPosition = self.scalette.center;
+    if(imageViewPosition.y == 870){
+        [UIView animateWithDuration:0.35 animations:^{
+          //  scalette.frame = CGRectMake(scalette.frame.origin.x,581 ,scalette.frame.size.width , scalette.frame.size.height);
+            imageViewPosition= CGPointMake(scalette.center.x, 577+scalette.frame.size.height/2);
+            scalette.center = imageViewPosition;
+        }];
+    }else{
+        [UIView animateWithDuration:0.35 animations:^{
+            scalette.frame = CGRectMake(scalette.frame.origin.x,768,scalette.frame.size.width,scalette.frame.size.height);
+            imageViewPosition= CGPointMake(scalette.center.x, 870);
+            scalette.center = imageViewPosition;
+        }];
+        
+    }
+    
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     [self controllaseceunoschermo];
     [self setUpScreenConnectionNotificationHandlers];
@@ -159,7 +177,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         
         
         self.checkVC.view.frame = screenBounds;
-     //   [self.secondWindow addSubview:self.checkVC.vistaGrande];
+        //   [self.secondWindow addSubview:self.checkVC.vistaGrande];
         
         self.secondWindow.hidden = NO;
         [self.secondWindow setBackgroundColor:[UIColor blackColor]];
@@ -170,12 +188,12 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         
         
     }
-
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
-
+    
 }
 - (void)handleTapGesture:(UITapGestureRecognizer *)sender {
     
@@ -200,7 +218,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
             }else if (toccoTimeDx==0){
                 toccoTimeDx=1;
             }
-        
+            
         }else if (sender.view ==_labelTimeVideoSx){
             
             if(toccoTimeSx==1){
@@ -232,10 +250,10 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
             self.artista1.textColor = [UIColor belizeHoleColor];
             self.artista2.textColor = [UIColor belizeHoleColor];
         } else {
-           self.view.backgroundColor = [UIColor midnightBlueColor];
-           self.separatorView.backgroundColor = colore;
-           self.labelTempoSx.textColor = [UIColor blackColor];
-           self.labelTempoDx.textColor = [UIColor blackColor];
+            self.view.backgroundColor = [UIColor midnightBlueColor];
+            self.separatorView.backgroundColor = colore;
+            self.labelTempoSx.textColor = [UIColor blackColor];
+            self.labelTempoDx.textColor = [UIColor blackColor];
             self.titolo1.textColor = colore;
             self.titolo2.textColor = colore;
             self.artista1.textColor = colore;
@@ -283,7 +301,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         
         
     }
-
+    
 }
 
 - (void)handleScreenDidDisconnectNotification:(NSNotification*)aNotification
@@ -297,7 +315,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         self.secondWindow = nil;
         self.checkVC.view.frame = CGRectMake(148, 111, 728, 410);
         [self.view addSubview:self.checkVC.view];
-
+        
         
     }
     
@@ -308,21 +326,32 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     CGPoint translation = [panRecognizer translationInView:self.view];
     
     CGPoint imageViewPosition = self.scalette.center;
-
-
     
     imageViewPosition.y += translation.y;
-    if (imageViewPosition.y < 663 ){
-        imageViewPosition.y = 663;
+    
+    if(imageViewPosition.y < 777){
+        imageViewPosition.y = 688;
+        su = 1;
     }
-    if (imageViewPosition.y > 833 ){
-        imageViewPosition.y = 833;
+    if(imageViewPosition.y >768){
+        imageViewPosition.y = 857;
+        su = 0;
     }
     
+    if (imageViewPosition.y < 688 ){
+        imageViewPosition.y = 688;
+        su = 1;
+    }
+    if (imageViewPosition.y > 857 ){
+        imageViewPosition.y = 857;
+        su= 0;
+    }
     NSLog(@"%f",imageViewPosition.y);
-    self.scalette.center = imageViewPosition;
+    [UIView animateWithDuration:0.15 animations:^{
+        self.scalette.center = imageViewPosition;
+        
+    }];
     // muovi la vista canzoni di quanto hai trascinato
-    [panRecognizer setTranslation:CGPointZero inView:self.view];
 }
 
 -(IBAction)segmentedChanged:(id)sende{
@@ -337,16 +366,16 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
             
             self.checkVC.playerViewsx.frame = screenBounds;
             self.checkVC.playerViewdx.frame = screenBounds;
-
-                self.checkVC.playerViewdx.alpha = _alphaChannelSlider.value/ 100.0;
-                self.checkVC.playerViewsx.alpha =  1.0-(_alphaChannelSlider.value/ 100.0);
+            
+            self.checkVC.playerViewdx.alpha = _alphaChannelSlider.value/ 100.0;
+            self.checkVC.playerViewsx.alpha =  1.0-(_alphaChannelSlider.value/ 100.0);
             
         }else{
             self.checkVC.playerViewsx.frame = curFrameAlpha;
             self.checkVC.playerViewdx.frame = curFrameAlpha;
             self.checkVC.playerViewdx.alpha = _alphaChannelSlider.value/ 100.0;
             self.checkVC.playerViewsx.alpha =  1.0-(_alphaChannelSlider.value/ 100.0);
-            }
+        }
         
         
         
@@ -392,13 +421,13 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
 {
     
     if(mutedx ==1){
-    
+        
         [self.checkVC.playerViewdx setVolume:0 chi:self.checkVC.playerViewdx.player];
-
+        
     }else if(mutedx ==0){
         //se è già muto, ritorna al volume dello slider
         [self.checkVC.playerViewdx setVolume:_volumeSliderAvplayer2.value chi:self.checkVC.playerViewdx.player];
-
+        
     }
     
     if( self.checkVC.playerViewdx.player.rate == 0 && self.checkVC.playerViewdx.player.status == AVPlayerStatusReadyToPlay){
@@ -410,34 +439,34 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     else if (self.checkVC.playerViewdx.player.rate != 0){
         [_playDx setTitle:@"Play" forState:UIControlStateNormal];
         [self.checkVC.playerViewdx.player pause];
-                [_playDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
+        [_playDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
     }
     
 }
 -(IBAction)setupMovie2
 {
-
+    
     
     if(mutesx ==1){
         [self.checkVC.playerViewsx setVolume:0 chi:self.checkVC.playerViewsx.player];
-
+        
     }else if(mutesx==0){
         //se è già muto, ritorna al volume dello slider
         [self.checkVC.playerViewsx setVolume:(1-_volumeSliderAvplayer2.value) chi:self.checkVC.playerViewsx.player];
-
+        
     }
     
     
     if( self.checkVC.playerViewsx.player.rate == 0 && self.checkVC.playerViewsx.player.status == AVPlayerStatusReadyToPlay){
         [_playSx setTitle:@"Pause" forState:UIControlStateNormal];
-              [_playSx setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+        [_playSx setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
         [self.checkVC.playerViewsx.player play];
         self.checkVC.playerVideosx.rate = ratesx;
     }
     else if (self.checkVC.playerViewsx.player.rate != 0){
         [_playSx setTitle:@"Play" forState:UIControlStateNormal];
         [self.checkVC.playerViewsx.player pause];
-                        [_playSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
+        [_playSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
         
     }
 }
@@ -467,7 +496,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     if([_playDx.titleLabel.text isEqualToString:@"Pause"]){
         [_playDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
         [_playDx setTitle:@"Play" forState:UIControlStateNormal];
-
+        
     }
     
     [self.checkVC.playerViewdx.player pause];
@@ -479,9 +508,9 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     
     if([_playSx.titleLabel.text isEqualToString:@"Pause"]){
-          [_playSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
+        [_playSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
         [_playSx setTitle:@"Play" forState:UIControlStateNormal];
-
+        
     }
     
     [self.checkVC.playerViewsx.player pause];
@@ -496,20 +525,20 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     //se il pulsante muto è attivo non cambiare volume
     if( mutedx ==1){
-    
+        
         
     }else if(mutedx ==0){
-
+        
         [self.checkVC.playerViewdx setVolume:_volumeSliderAvplayer2.value chi:self.checkVC.playerViewdx.player];
     }
     
-
+    
     
     if( mutesx ==1){
     }else if(mutesx ==0){
         [self.checkVC.playerViewsx setVolume:(1-_volumeSliderAvplayer2.value) chi:self.checkVC.playerViewsx.player];
     }
-
+    
     
 }
 
@@ -517,13 +546,14 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     //appena selezionato il video dismette la vista popover di selezione video
     [self.popSegue dismissPopoverAnimated:YES];
-
+    
     
     if (chie == 0){
         //Video di destra
         
         if([_playDx.titleLabel.text isEqualToString:@"Pause"]){
             [_playDx setTitle:@"Play" forState:UIControlStateNormal];
+            [_playDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
         }
         videoDestra = [AVAsset assetWithURL:selectedItem];
         
@@ -540,15 +570,17 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         
         
         [self.checkVC.playerViewdx setMovieToPlayer:self.checkVC.playerVideo];
-             
+        
         self.checkVC.playerVideo.actionAtItemEnd = AVPlayerActionAtItemEndNone;
         
         [self setSlider];
-
         
     }else if(chie == 1){
         
-        
+        if([_playSx.titleLabel.text isEqualToString:@"Pause"]){
+            [_playSx setTitle:@"Play" forState:UIControlStateNormal];
+            [_playSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
+        }
         //Video di sinistra
         videoSinistra = [AVAsset assetWithURL:selectedItem];
         
@@ -561,32 +593,34 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
             self.checkVC.playerVideosx = [[AVPlayer alloc]initWithPlayerItem:videoItemSinistra];
             
         }else{
-
+            
             [self.checkVC.playerVideosx replaceCurrentItemWithPlayerItem:videoItemSinistra];
             [self.checkVC.playerVideosx pause];
         }
         
         [self.checkVC.playerViewsx setMovieToPlayer:self.checkVC.playerVideosx];
         
-          self.checkVC.playerVideosx.actionAtItemEnd = AVPlayerActionAtItemEndNone;
+        self.checkVC.playerVideosx.actionAtItemEnd = AVPlayerActionAtItemEndNone;
         [self setSliderTimeSx];
         
     }
 }
+
+
 -(IBAction)muteVideoSx:(id)sender{
     // rendi muto il video di sinistra
-
+    
     if(mutesx ==0){
         
         [self.checkVC.playerViewsx setVolume:0 chi:self.checkVC.playerViewsx.player];
-
+        
         [self.muteVideoSx setImage:[UIImage imageNamed:@"volumeoff"] forState:UIControlStateNormal];
-
+        
         mutesx=1;
     }else if(mutesx==1){
         [self.checkVC.playerViewsx setVolume:(1-_volumeSliderAvplayer2.value) chi:self.checkVC.playerViewsx.player];
         [self.muteVideoSx setImage:[UIImage imageNamed:@"volumeon"] forState:UIControlStateNormal];
-
+        
         mutesx =0;
     }
     
@@ -600,12 +634,12 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         [self.checkVC.playerViewdx setVolume:0 chi:self.checkVC.playerViewdx.player];
         mutedx=1;
         [self.muteVideoDx setImage:[UIImage imageNamed:@"volumeoff"] forState:UIControlStateNormal];
-
+        
         
     }else if(mutedx ==1){
         [self.checkVC.playerViewdx setVolume:_volumeSliderAvplayer2.value chi:self.checkVC.playerViewdx.player];
         [self.muteVideoDx setImage:[UIImage imageNamed:@"volumeon"] forState:UIControlStateNormal];
-
+        
         mutedx =0;
     }
     
@@ -613,10 +647,10 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
 
 -(void)alphaChannelSliderHalf{
     if ([segmentedTransizione selectedSegmentIndex] == 0){
-
-            self.checkVC.playerViewdx.alpha = 0.5;
-            self.checkVC.playerViewsx.alpha =  0.5;
-        }
+        
+        self.checkVC.playerViewdx.alpha = 0.5;
+        self.checkVC.playerViewsx.alpha =  0.5;
+    }
     else if ([segmentedTransizione selectedSegmentIndex] == 1){
         
         if ([[UIScreen screens] count] > 1)
@@ -649,14 +683,14 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         }
         
     }
-
+    
 }
 - (IBAction)alphaChannelSliderChanged:(UISlider *)alphaChannelSlider{
     
-if ([segmentedTransizione selectedSegmentIndex] == 0){
-
-            self.checkVC.playerViewdx.alpha = _alphaChannelSlider.value/ 100.0;
-            self.checkVC.playerViewsx.alpha =  1.0-(_alphaChannelSlider.value/ 100.0);
+    if ([segmentedTransizione selectedSegmentIndex] == 0){
+        
+        self.checkVC.playerViewdx.alpha = _alphaChannelSlider.value/ 100.0;
+        self.checkVC.playerViewsx.alpha =  1.0-(_alphaChannelSlider.value/ 100.0);
         
     }
     else if ([segmentedTransizione selectedSegmentIndex] == 1){
@@ -680,7 +714,7 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
         }else{
             float dove  = [self mappaValori:_alphaChannelSlider.value valoremassimocorrente:0 nuovomassimo:self.checkVC.playerViewsx.frame.size.width];
             // aggiungere alla cordinata x delle viste il valore di totale-dove
-
+            
             curFramesx =CGRectMake(-dove, self.checkVC.playerViewsx.frame.origin.y, self.checkVC.playerViewsx.frame.size.width, self.checkVC.playerViewsx.frame.size.height);
             
             
@@ -733,17 +767,17 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     if (toccoTimeSx==0){
         min = self.timeSliderSx.value/60;
         sec = lroundf(self.timeSliderSx.value)%60;
-            _labelTimeVideoSx.text = [NSString stringWithFormat:@"%d:%2.02d", min,sec];
+        _labelTimeVideoSx.text = [NSString stringWithFormat:@"%d:%2.02d", min,sec];
     }else if(toccoTimeSx==1){
         min=timeLeft/60;
         sec = lroundf(timeLeft) % 60;
-            _labelTimeVideoSx.text = [NSString stringWithFormat:@"-%d:%2.02d", min,sec];
+        _labelTimeVideoSx.text = [NSString stringWithFormat:@"-%d:%2.02d", min,sec];
     }
 }
 
 - (Float64)durationInSecondsSx {
     
-    Float64 dur = CMTimeGetSeconds([self.checkVC.playerVideosx.currentItem duration]);
+    Float64 dur = CMTimeGetSeconds([[[self.checkVC.playerVideosx currentItem]asset] duration]);
     return dur;
 }
 
@@ -754,31 +788,31 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     return dur;
 }
 -(void)cambiaVolumealPlayer{
-
     
-        //se il pulsante muto è attivo non cambiare volume
-        if( mutedx ==1){
-
-            
-        }else if(mutedx ==0){
-            
-            [self.checkVC.playerViewdx setVolume:(_volumeSliderAvplayer2.value) chi:self.checkVC.playerViewdx.player];
-            
-        }
     
+    //se il pulsante muto è attivo non cambiare volume
+    if( mutedx ==1){
         
-               
-        //se il pulsante muto è attivo non cambiare volume
-        if( mutesx ==1){
-            
-        }else if(mutesx ==0){
-            [self.checkVC.playerViewsx setVolume:(1-_volumeSliderAvplayer2.value) chi:self.checkVC.playerViewsx.player];
-        }
         
+    }else if(mutedx ==0){
+        
+        [self.checkVC.playerViewdx setVolume:(_volumeSliderAvplayer2.value) chi:self.checkVC.playerViewdx.player];
+        
+    }
+    
+    
+    
+    //se il pulsante muto è attivo non cambiare volume
+    if( mutesx ==1){
+        
+    }else if(mutesx ==0){
+        [self.checkVC.playerViewsx setVolume:(1-_volumeSliderAvplayer2.value) chi:self.checkVC.playerViewsx.player];
+    }
+    
     
 }
 -(void)sliding:(id)sender{
-   
+    
     if([sender isEqual:_timeSliderDx]){
         
         if( [_playDx.titleLabel.text isEqual:@"Pause"]){
@@ -788,7 +822,7 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
         
         CMTime newTime = CMTimeMakeWithSeconds(_timeSliderDx.value, 1);
         dispatch_queue_t queue = dispatch_queue_create("cambiatempo",NULL);
-
+        
         dispatch_async(queue, ^{
             
             CMTime t1 = CMTimeMake(1, 5);
@@ -816,13 +850,13 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
         
         [self cambiaVolumealPlayer];
         if( [_playSx.titleLabel.text isEqual:@"Pause"]){
-        [self.checkVC.playerVideosx setRate:ratesx];            
+            [self.checkVC.playerVideosx setRate:ratesx];
         }
-
+        
     }else{
         NSLog(@"%@",sender);
     }
-
+    
 }
 -(void)setSlider{
     
@@ -850,17 +884,18 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     if (toccoTimeDx==0){
         min = self.timeSliderDx.value/60;
         sec = lroundf(self.timeSliderDx.value)%60;
-            _labelTimeVideoDx.text = [NSString stringWithFormat:@"%d:%2.02d", min,sec];
+        _labelTimeVideoDx.text = [NSString stringWithFormat:@"%d:%2.02d", min,sec];
     }else if(toccoTimeDx==1){
         min=timeLeft/60;
         sec = lroundf(timeLeft) % 60;
-            _labelTimeVideoDx.text = [NSString stringWithFormat:@"-%d:%2.02d", min,sec];
+        _labelTimeVideoDx.text = [NSString stringWithFormat:@"-%d:%2.02d", min,sec];
     }
 }
 
 - (Float64)durationInSeconds {
+    Float64 dur = CMTimeGetSeconds([[[self.checkVC.playerVideo currentItem]asset] duration]);
     
-    Float64 dur = CMTimeGetSeconds([self.checkVC.playerVideo.currentItem duration]);
+    
     return dur;
 }
 
@@ -892,9 +927,9 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
             [self.checkVC.playerViewsx setVolume:0 chi:self.checkVC.playerViewsx.player];
             
         }else{
-           
+            
             [self.checkVC.playerViewsx setVolume:(1-_volumeSliderAvplayer2.value) chi:self.checkVC.playerViewsx.player];
-}
+        }
         
         [self.checkVC.playerVideosx setRate:ratesx];
     }
@@ -912,15 +947,15 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
                                                      name:AVPlayerItemDidPlayToEndTimeNotification
                                                    object:[self.checkVC.playerVideo currentItem]];
         [self.loopDx setImage:[UIImage imageNamed:@"loop"] forState:UIControlStateNormal];
-
-
+        
+        
         loopdx = 1;
     }else{
         //se c'è già, lo tolgo
         [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:[self.checkVC.playerVideo currentItem]];
         loopdx = 0;
         [self.loopDx setImage:[UIImage imageNamed:@"loopOff"] forState:UIControlStateNormal];
-
+        
     }
 }
 
@@ -934,13 +969,13 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
                                                      name:AVPlayerItemDidPlayToEndTimeNotification
                                                    object:[self.checkVC.playerVideosx currentItem]];
         [self.loopSx setImage:[UIImage imageNamed:@"loop"] forState:UIControlStateNormal];
-
+        
         loopsx = 1;
     }else{
         //se c'è già, lo tolgo
         [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:[self.checkVC.playerVideosx currentItem]];
         [self.loopSx setImage:[UIImage imageNamed:@"loopOff"] forState:UIControlStateNormal];
-
+        
         loopsx = 0;
     }
 }
@@ -965,7 +1000,7 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     if ([[segue identifier] isEqualToString:@"popover"] || [[segue identifier] isEqualToString:@"popover3"]  )
     {
         self.popSegue = [(UIStoryboardPopoverSegue *)segue popoverController];
-         [self.popSegue configureFlatPopoverWithBackgroundColor:[UIColor belizeHoleColor] cornerRadius:10.0];
+        [self.popSegue configureFlatPopoverWithBackgroundColor:[UIColor belizeHoleColor] cornerRadius:10.0];
         [[segue destinationViewController] setDelegate:self];
         chie =0;
     }
@@ -973,11 +1008,11 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     {
         self.popSegue =[(UIStoryboardPopoverSegue *)segue popoverController];
         [self.popSegue configureFlatPopoverWithBackgroundColor:[UIColor belizeHoleColor] cornerRadius:10.0];
-
+        
         [[segue destinationViewController] setDelegate:self];
         chie =1;
-
-
+        
+        
     }
     
     if ([segue.identifier isEqualToString:@"cpdc_check_embed"]) {
@@ -985,11 +1020,11 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
         segui = segue.destinationViewController;
     }
     if ([segue.identifier isEqualToString:@"settings"]) {
-
+        
         self.popSegue =[(UIStoryboardPopoverSegue *)segue popoverController];
         [self.popSegue configureFlatPopoverWithBackgroundColor:[UIColor belizeHoleColor] cornerRadius:10.0];
         [[segue destinationViewController] setDelegate:self];
-
+        
     }
 }
 
@@ -1010,7 +1045,7 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     // Crea una media picker view
     picker.delegate = self;
     [picker setAllowsPickingMultipleItems: NO];
-   // picker.prompt =NSLocalizedString (@"AGGIUNGI UNA CANZONE AL DECK DI DESTRA","Prompt in media item picker");
+    // picker.prompt =NSLocalizedString (@"AGGIUNGI UNA CANZONE AL DECK DI DESTRA","Prompt in media item picker");
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         
@@ -1043,7 +1078,7 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     picker2.delegate = self;
     [picker2 setAllowsPickingMultipleItems: NO];
     picker2.prompt =
- //   NSLocalizedString (@"AGGIUNGI UNA CANZONE AL DECK DI SINISTRA","Prompt in media item picker");
+    //   NSLocalizedString (@"AGGIUNGI UNA CANZONE AL DECK DI SINISTRA","Prompt in media item picker");
     picker2.title = @"TITOLOSX";
     
     
@@ -1087,6 +1122,7 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
         urlSongSinistra = [item valueForProperty:MPMediaItemPropertyAssetURL];
         
         
+        [_pausaPlayCanzoneSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
         [player stop];
         _cover1.image = [artWork imageWithSize:CGSizeMake(96, 96)];
         _titolo1.text = [item valueForProperty:MPMediaItemPropertyTitle];
@@ -1112,7 +1148,7 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
          });
          */
     }else{
-        
+        [_pausaPlayCanzoneDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
         urlSongDestra = [item valueForProperty:MPMediaItemPropertyAssetURL];
         player2 = nil;
         [player2 stop];
@@ -1184,33 +1220,7 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     [picker dismissMoviePlayerViewControllerAnimated];
     [picker2 dismissMoviePlayerViewControllerAnimated];
 }
-- (IBAction)showHideView:(id)sender
-{
-    if(su==0){
-        [UIView animateWithDuration:0.1f
-                              delay:0.0f
-                            options: UIViewAnimationOptionCurveEaseIn
-                         animations:^{
-                             [scalette setFrame:CGRectMake(0.0f, 551.0f, scalette.frame.size.width, scalette.frame.size.height)];
-                         }
-                         completion:nil];
-        
-        su=1;
-        
-    }else{
-        [UIView animateWithDuration:0.1f
-                              delay:0.0f
-                            options: UIViewAnimationOptionCurveEaseIn
-                         animations:^{
-                             [scalette setFrame:CGRectMake(0.0f,722.0f , scalette.frame.size.width, scalette.frame.size.height)];
-                         }
-                         completion:nil];
-        
-        
-        su = 0;
-    }
-    
-}
+
 -(IBAction)stopCanzonesx:(id)sender{
     
     //stoppa la canzone
@@ -1232,10 +1242,10 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     if(player.playing){
         [_pausaPlayCanzoneSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
         [player pause];
-    }else if(!player.playing){
+    }else if(!player.playing && player){
         [self sliderValueChangeddx:_sliderdx];
         [_pausaPlayCanzoneSx setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
-
+        
         [player play];
         
     }
@@ -1248,12 +1258,12 @@ if ([segmentedTransizione selectedSegmentIndex] == 0){
     // pausa e play del player audio
     if(player2.playing){
         [_pausaPlayCanzoneDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
-
+        
         [player2 pause];
-    }else if(!player2.playing){
+    }else if(!player2.playing && player2){
         [self sliderValueChanged:_slidersx];
         [_pausaPlayCanzoneDx setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
-
+        
         [player2 play];
         
     }

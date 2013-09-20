@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -10,11 +10,11 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CkF-SK-d6A" customClass="FUIButton">
-                                <rect key="frame" x="811" y="619" width="181" height="44"/>
+                                <rect key="frame" x="811" y="650" width="181" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Add iTunes Video">
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4nZ-qc-FLw" customClass="FUIButton">
-                                <rect key="frame" x="201" y="619" width="181" height="44"/>
+                                <rect key="frame" x="201" y="650" width="181" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Add iTunes Video">
@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0YT-vx-Tgp">
-                                <rect key="frame" x="630" y="671" width="50" height="50"/>
+                                <rect key="frame" x="630" y="697" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,7 +65,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xny-kW-1ex">
-                                <rect key="frame" x="20" y="670" width="50" height="51"/>
+                                <rect key="frame" x="20" y="696" width="50" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" title="Play" image="playpause.png">
@@ -80,7 +80,7 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" id="HXs-Yx-R96">
-                                <rect key="frame" x="385" y="436" width="254" height="23"/>
+                                <rect key="frame" x="385" y="462" width="254" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.2274509804" green="0.46666666670000001" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
@@ -88,7 +88,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" id="IEL-e6-WRF">
-                                <rect key="frame" x="385" y="466" width="254" height="23"/>
+                                <rect key="frame" x="385" y="492" width="254" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.22745098039215686" green="0.46666666666666667" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -96,7 +96,7 @@
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c2B-KJ-eCF">
-                                <rect key="frame" x="148" y="670" width="50" height="51"/>
+                                <rect key="frame" x="148" y="696" width="50" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="volumeon.png">
@@ -111,7 +111,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9gy-QG-fEc">
-                                <rect key="frame" x="761" y="670" width="50" height="52"/>
+                                <rect key="frame" x="761" y="696" width="50" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="volumeon.png">
@@ -126,7 +126,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a3N-99-yAv" customClass="FUIButton">
-                                <rect key="frame" x="20" y="619" width="181" height="44"/>
+                                <rect key="frame" x="20" y="650" width="181" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Add preloaded video">
@@ -143,7 +143,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="emJ-IC-xDs" customClass="FUIButton">
-                                <rect key="frame" x="630" y="619" width="181" height="44"/>
+                                <rect key="frame" x="630" y="650" width="181" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Add preloaded video">
@@ -160,7 +160,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lac-nT-8DH">
-                                <rect key="frame" x="826" y="670" width="50" height="51"/>
+                                <rect key="frame" x="826" y="696" width="50" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="loopOff.png">
@@ -175,7 +175,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="P5q-55-YOr">
-                                <rect key="frame" x="688" y="671" width="49" height="50"/>
+                                <rect key="frame" x="688" y="697" width="49" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Stop" image="stop.png">
@@ -190,7 +190,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="T6o-xk-vlr">
-                                <rect key="frame" x="78" y="670" width="50" height="51"/>
+                                <rect key="frame" x="78" y="696" width="50" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Stop" image="stop.png">
@@ -205,7 +205,7 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" id="k54-jM-aSO">
-                                <rect key="frame" x="18" y="589" width="366" height="23"/>
+                                <rect key="frame" x="18" y="615" width="366" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.2274509804" green="0.46666666670000001" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
@@ -213,7 +213,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" id="c3P-nR-5v7">
-                                <rect key="frame" x="628" y="589" width="366" height="23"/>
+                                <rect key="frame" x="628" y="615" width="366" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.2274509804" green="0.46666666670000001" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
@@ -221,7 +221,7 @@
                                 </connections>
                             </slider>
                             <containerView clipsSubviews="YES" contentMode="scaleToFill" id="Ulu-1b-YPE">
-                                <rect key="frame" x="148" y="11" width="728" height="410"/>
+                                <rect key="frame" x="148" y="37" width="728" height="410"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -229,7 +229,7 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HNj-JD-nLP">
-                                <rect key="frame" x="206" y="670" width="50" height="51"/>
+                                <rect key="frame" x="206" y="696" width="50" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="loopOff.png">
@@ -244,17 +244,17 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="Wqy-fE-yHH">
-                                <rect key="frame" x="628" y="559" width="366" height="23"/>
+                                <rect key="frame" x="628" y="585" width="366" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.2274509804" green="0.46666666670000001" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="vur-e9-MGb">
-                                <rect key="frame" x="18" y="559" width="366" height="23"/>
+                                <rect key="frame" x="18" y="585" width="366" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.2274509804" green="0.46666666670000001" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
                             </slider>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="UHZ-3k-EHb" customClass="FUISegmentedControl">
-                                <rect key="frame" x="437" y="555" width="151" height="30"/>
+                                <rect key="frame" x="437" y="581" width="151" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Fade"/>
@@ -266,12 +266,12 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" id="nsM-Gg-bW5">
-                                <rect key="frame" x="0.0" y="507" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="533" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S2v-QO-Yqf">
-                                <rect key="frame" x="630" y="507" width="100" height="44"/>
+                                <rect key="frame" x="630" y="533" width="100" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
@@ -279,7 +279,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g4U-wn-W4P">
-                                <rect key="frame" x="730" y="507" width="294" height="44"/>
+                                <rect key="frame" x="730" y="533" width="294" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
@@ -287,7 +287,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qYl-gP-xdb">
-                                <rect key="frame" x="20" y="507" width="362" height="44"/>
+                                <rect key="frame" x="20" y="533" width="362" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
@@ -295,7 +295,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oQ5-QD-dyC">
-                                <rect key="frame" x="487" y="678" width="35" height="35"/>
+                                <rect key="frame" x="487" y="704" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="gear.png">
@@ -311,15 +311,15 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <view clearsContextBeforeDrawing="NO" alpha="0.90000000000000002" contentMode="top" id="JJ2-bF-In4" customClass="FXBlurView">
-                                <rect key="frame" x="0.0" y="721" width="1024" height="224"/>
+                            <view clearsContextBeforeDrawing="NO" alpha="0.90000000000000002" contentMode="top" id="JJ2-bF-In4">
+                                <rect key="frame" x="0.0" y="768" width="1024" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bve-iL-MTT">
-                                        <rect key="frame" x="20" y="-3" width="25" height="27"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="Bve-iL-MTT">
+                                        <rect key="frame" x="20" y="2" width="22" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
-                                        <state key="normal" title="+">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -330,11 +330,11 @@
                                             <action selector="showMediaPicker2:" destination="2" eventType="touchUpInside" id="XXd-vi-QAe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ah8-lT-Cjc">
-                                        <rect key="frame" x="979" y="-3" width="25" height="27"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="Ah8-lT-Cjc">
+                                        <rect key="frame" x="981" y="2" width="22" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
-                                        <state key="normal" title="+">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -346,18 +346,18 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WXd-JI-HFN">
-                                        <rect key="frame" x="15" y="35" width="331" height="35"/>
+                                        <rect key="frame" x="15" y="44" width="266" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="tRH-NX-pr1">
-                                        <rect key="frame" x="354" y="35" width="96" height="96"/>
+                                        <rect key="frame" x="354" y="16" width="96" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lEa-WO-Ldi">
-                                        <rect key="frame" x="80" y="88" width="50" height="51"/>
+                                        <rect key="frame" x="296" y="69" width="50" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="stop.png">
@@ -372,7 +372,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mwd-zg-6do">
-                                        <rect key="frame" x="15" y="88" width="50" height="51"/>
+                                        <rect key="frame" x="231" y="69" width="50" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="playpause.png">
@@ -387,7 +387,7 @@
                                         </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" id="r3I-aF-ZJH">
-                                        <rect key="frame" x="13" y="140" width="439" height="23"/>
+                                        <rect key="frame" x="13" y="118" width="439" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="maximumTrackTintColor" red="1" green="0.43529412150382996" blue="0.81176471710205078" alpha="1" colorSpace="calibratedRGB"/>
@@ -396,18 +396,18 @@
                                         </connections>
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ROQ-fy-Zii">
-                                        <rect key="frame" x="569" y="35" width="331" height="35"/>
+                                        <rect key="frame" x="569" y="44" width="235" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="lRl-7G-f8d">
-                                        <rect key="frame" x="908" y="35" width="96" height="96"/>
+                                        <rect key="frame" x="877" y="16" width="96" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4Ia-Wj-6pD">
-                                        <rect key="frame" x="635" y="88" width="50" height="51"/>
+                                        <rect key="frame" x="819" y="69" width="50" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="stop.png">
@@ -422,7 +422,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QEt-7L-vsk">
-                                        <rect key="frame" x="570" y="88" width="50" height="51"/>
+                                        <rect key="frame" x="754" y="69" width="50" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="playpause.png">
@@ -437,7 +437,7 @@
                                         </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" id="JJ2-J7-ZbG">
-                                        <rect key="frame" x="567" y="140" width="439" height="23"/>
+                                        <rect key="frame" x="567" y="118" width="439" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="maximumTrackTintColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -446,39 +446,24 @@
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="nVJ-zy-CSo">
-                                        <rect key="frame" x="567" y="170" width="439" height="23"/>
+                                        <rect key="frame" x="567" y="148" width="439" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="XoK-BV-9gZ">
-                                        <rect key="frame" x="13" y="170" width="439" height="23"/>
+                                        <rect key="frame" x="13" y="148" width="439" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </slider>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0k2-BB-GF7">
-                                        <rect key="frame" x="53" y="-27" width="918" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showHideView:" destination="2" eventType="touchUpInside" id="aeh-R1-hTY"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RXO-Ew-BIK">
-                                        <rect key="frame" x="15" y="60" width="331" height="25"/>
+                                        <rect key="frame" x="20" y="87" width="208" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rab-me-kAa">
-                                        <rect key="frame" x="569" y="58" width="331" height="30"/>
+                                        <rect key="frame" x="569" y="80" width="177" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -491,20 +476,12 @@
                                 </accessibility>
                                 <gestureRecognizers/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wm9-Qq-C4e">
-                                <rect key="frame" x="476" y="619" width="73" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tDe-gZ-ofm">
+                                <rect key="frame" x="473" y="618" width="63" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="music"/>
                                 <connections>
-                                    <action selector="recording:" destination="2" eventType="touchUpInside" id="kUu-ty-Rum"/>
-                                    <action selector="startRecording" destination="2" eventType="touchUpInside" id="x0m-Kx-wq1"/>
+                                    <action selector="showMusic:" destination="2" eventType="touchUpInside" id="Nex-Jo-UTl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -532,6 +509,7 @@
                         <outlet property="labelTimeVideoSx" destination="qYl-gP-xdb" id="L4z-Yu-UnB"/>
                         <outlet property="loopDx" destination="lac-nT-8DH" id="3Qs-fK-uRV"/>
                         <outlet property="loopSx" destination="HNj-JD-nLP" id="Q4b-Ja-V8K"/>
+                        <outlet property="musicButton" destination="tDe-gZ-ofm" id="c5J-1i-QQt"/>
                         <outlet property="muteSx" destination="c2B-KJ-eCF" id="iKG-P4-WZL"/>
                         <outlet property="muteVideoDx" destination="9gy-QG-fEc" id="voi-8b-Q3k"/>
                         <outlet property="muteVideoSx" destination="c2B-KJ-eCF" id="FUp-0w-u4B"/>
@@ -542,8 +520,7 @@
                         <outlet property="preloadedDx" destination="emJ-IC-xDs" id="alM-hP-8ar"/>
                         <outlet property="preloadedSx" destination="a3N-99-yAv" id="sdo-Lt-pBd"/>
                         <outlet property="questoSiDeveVedere" destination="Ulu-1b-YPE" id="dwO-k5-k4r"/>
-                        <outlet property="recButton" destination="wm9-Qq-C4e" id="NGe-Je-WRV"/>
-                        <outlet property="scalette" destination="JJ2-bF-In4" id="PvU-fa-TKz"/>
+                        <outlet property="scalette" destination="JJ2-bF-In4" id="DyS-oV-9Ju"/>
                         <outlet property="segmentedTransizione" destination="UHZ-3k-EHb" id="rmm-yM-cLs"/>
                         <outlet property="separatorView" destination="nsM-Gg-bW5" id="AUt-n9-tON"/>
                         <outlet property="settingsButton" destination="oQ5-QD-dyC" id="0rT-fn-ZYw"/>
@@ -566,14 +543,14 @@
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Hmi-ci-lOo"/>
                 <tapGestureRecognizer id="NeK-N8-hK9"/>
             </objects>
-            <point key="canvasLocation" x="-785" y="347"/>
+            <point key="canvasLocation" x="-783" y="377"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="P4U-Eh-aie">
             <objects>
                 <viewController id="cB3-oZ-M4A" customClass="settingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="anu-hg-v0K">
-                        <rect key="frame" x="0.0" y="20" width="350" height="420"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="440"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Kv-o1-hYN" customClass="FUIButton">
@@ -617,11 +594,11 @@
             <objects>
                 <viewController id="ybL-GF-1i4" customClass="selezionaVideoMusicaliController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AJn-Cv-PrO">
-                        <rect key="frame" x="0.0" y="20" width="350" height="420"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="440"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="yId-03-jTz">
-                                <rect key="frame" x="0.0" y="0.0" width="352" height="420"/>
+                                <rect key="frame" x="0.0" y="0.0" width="352" height="440"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -629,38 +606,37 @@
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="tQz-iz-41a" customClass="VideoCell">
                                         <rect key="frame" x="0.0" y="22" width="352" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="352" height="79"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tQz-iz-41a" id="AwM-oy-feG">
+                                            <rect key="frame" x="0.0" y="0.0" width="352" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dgQ-ta-Ov7">
-                                                    <rect key="frame" x="114" y="-51" width="276" height="138"/>
+                                                    <rect key="frame" x="114" y="-50" width="229" height="138"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Pwi-6F-wsd">
-                                                    <rect key="frame" x="20" y="5" width="70" height="70"/>
+                                                    <rect key="frame" x="20" y="6" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ij0-G3-bAa">
-                                                    <rect key="frame" x="114" y="54" width="42" height="21"/>
+                                                    <rect key="frame" x="114" y="55" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DsL-LP-Dyy">
-                                                    <rect key="frame" x="114" y="32" width="216" height="21"/>
+                                                    <rect key="frame" x="114" y="33" width="229" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <outlet property="artistaVideo" destination="DsL-LP-Dyy" id="GdK-u3-MXn"/>
                                             <outlet property="durataVideo" destination="Ij0-G3-bAa" id="C4B-Hs-Iot"/>
@@ -694,11 +670,11 @@
             <objects>
                 <viewController id="PfO-l5-688" customClass="FileSharingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IZM-IO-a5X">
-                        <rect key="frame" x="0.0" y="20" width="350" height="420"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="440"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tfz-EI-r6Q">
-                                <rect key="frame" x="0.0" y="0.0" width="350" height="420"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tfz-EI-r6Q">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="440"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.46666666670000001" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -706,8 +682,8 @@
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="Pzg-pV-HIK" customClass="VideoCell">
                                         <rect key="frame" x="0.0" y="22" width="350" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="35"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pzg-pV-HIK" id="RYN-Wp-QqI">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="36"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="DXI-eK-wDk">
@@ -718,8 +694,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <outlet property="titoloVideo" destination="DXI-eK-wDk" id="qk0-M1-Bjj"/>
                                         </connections>
@@ -749,20 +724,20 @@
             <objects>
                 <viewController id="DPA-95-lJs" customClass="FileSharingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wJP-EU-cds">
-                        <rect key="frame" x="0.0" y="20" width="350" height="420"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="440"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" id="FiP-eo-a31">
-                                <rect key="frame" x="0.0" y="0.0" width="350" height="420"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FiP-eo-a31">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="440"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.46666666670000001" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="tO5-c9-1Kq" customClass="VideoCell">
                                         <rect key="frame" x="0.0" y="22" width="350" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="35"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tO5-c9-1Kq" id="nsD-Ol-mHE">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="36"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yr2-uy-211">
@@ -773,8 +748,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <outlet property="titoloVideo" destination="yr2-uy-211" id="8pG-U3-NDj"/>
                                         </connections>
@@ -805,49 +779,48 @@
             <objects>
                 <viewController id="9bW-fR-sty" customClass="selezionaVideoMusicaliController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7tY-vK-CHd">
-                        <rect key="frame" x="0.0" y="20" width="350" height="420"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="440"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="iVk-j3-2UG">
-                                <rect key="frame" x="0.0" y="0.0" width="350" height="420"/>
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="440"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="N9z-gf-j3v" customClass="VideoCell">
                                         <rect key="frame" x="0.0" y="22" width="350" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="79"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N9z-gf-j3v" id="hTe-cV-moM">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I80-YR-h03">
-                                                    <rect key="frame" x="114" y="-51" width="276" height="138"/>
+                                                    <rect key="frame" x="114" y="-50" width="229" height="138"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5sH-8H-6M2">
-                                                    <rect key="frame" x="20" y="5" width="70" height="70"/>
+                                                    <rect key="frame" x="20" y="6" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="02E-jz-u1c">
-                                                    <rect key="frame" x="114" y="54" width="42" height="21"/>
+                                                    <rect key="frame" x="114" y="55" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YBL-fj-fK4">
-                                                    <rect key="frame" x="114" y="32" width="216" height="21"/>
+                                                    <rect key="frame" x="114" y="33" width="229" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <outlet property="artistaVideo" destination="YBL-fj-fK4" id="3iY-Qy-PBu"/>
                                             <outlet property="durataVideo" destination="02E-jz-u1c" id="8rL-xu-d1a"/>
@@ -879,7 +852,7 @@
         <!--Container Controller-->
         <scene sceneID="fSf-tP-XDo">
             <objects>
-                <viewController restorationIdentifier="" storyboardIdentifier="" wantsFullScreenLayout="YES" id="pXk-rX-FiT" customClass="ContainerController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="" wantsFullScreenLayout="YES" id="pXk-rX-FiT" customClass="ContainerController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="name" id="5Zc-br-es0">
                         <rect key="frame" x="0.0" y="0.0" width="728" height="410"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -914,129 +887,8 @@
         <image name="stop.png" width="100" height="100"/>
         <image name="volumeon.png" width="100" height="100"/>
     </resources>
-    <classes>
-        <class className="ContainerController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="playerViewdx" candidateClass="avPlayer"/>
-                <relationship kind="outlet" name="playerViewsx" candidateClass="avPlayer"/>
-                <relationship kind="outlet" name="vistaGrande" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="FUIButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FUIButton.h"/>
-        </class>
-        <class className="FUISegmentedControl" superclassName="UISegmentedControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FUISegmentedControl.h"/>
-        </class>
-        <class className="FXBlurView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FXBlurView.h"/>
-        </class>
-        <class className="FileSharingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FileSharingViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="primaTabella" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="secondaTabella" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="VideoCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="artistaVideo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="durataVideo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="snapVideo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="titoloVideo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="urlVideo" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="alphaChannelSliderChanged:" candidateClass="UISlider"/>
-                <relationship kind="action" name="muteVideoDx:"/>
-                <relationship kind="action" name="muteVideoSx:"/>
-                <relationship kind="action" name="pausaPlayCanzoneSelezionatadx"/>
-                <relationship kind="action" name="pausaPlayCanzoneSelezionatasx"/>
-                <relationship kind="action" name="playerItemmDidReachEnd"/>
-                <relationship kind="action" name="playerItemmmDidReachEnd"/>
-                <relationship kind="action" name="showMediaPicker2:"/>
-                <relationship kind="action" name="showMediaPicker:"/>
-                <relationship kind="action" name="sliderRateVideo:" candidateClass="UISlider"/>
-                <relationship kind="action" name="sliderRateVideodx:" candidateClass="UISlider"/>
-                <relationship kind="action" name="sliderValueChanged:" candidateClass="UISlider"/>
-                <relationship kind="action" name="sliderValueChangeddx:" candidateClass="UISlider"/>
-                <relationship kind="action" name="stopCanzonedx:"/>
-                <relationship kind="action" name="stopCanzonesx:"/>
-                <relationship kind="action" name="stopMovie"/>
-                <relationship kind="action" name="stopMovie2"/>
-                <relationship kind="action" name="volumeSliderAvplayer2Changed:" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="addVideoDx" candidateClass="FUIButton"/>
-                <relationship kind="outlet" name="addVideoSx" candidateClass="FUIButton"/>
-                <relationship kind="outlet" name="alphaChannelSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="artista1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="artista2" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="bottone" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="bottone2" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="bottone3" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cover1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="cover2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelNomeVideoDx" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTempoDx" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTempoSx" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTimeVideoDx" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTimeVideoSx" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loopDx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loopSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="muteSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="muteVideoDx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="muteVideoSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pausaPlayCanzoneDx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pausaPlayCanzoneSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="playDx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="playSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="preloadedDx" candidateClass="FUIButton"/>
-                <relationship kind="outlet" name="preloadedSx" candidateClass="FUIButton"/>
-                <relationship kind="outlet" name="questoSiDeveVedere" candidateClass="UIView"/>
-                <relationship kind="outlet" name="recButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scalette" candidateClass="FXBlurView"/>
-                <relationship kind="outlet" name="segmentedTransizione" candidateClass="FUISegmentedControl"/>
-                <relationship kind="outlet" name="separatorView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="settingsButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sliderDurationDx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderDurationSx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderDx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderSx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderdx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="slidersx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="stopSx" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="timeSliderDx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="timeSliderSx" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="titolo1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titolo2" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeSliderAvplayer2" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="avPlayer" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/avPlayer.h"/>
-        </class>
-        <class className="selezionaVideoMusicaliController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/selezionaVideoMusicaliController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="primaTabella" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="secondaTabella" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="settingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/settingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changeBackgroundColour:"/>
-                <relationship kind="outlet" name="buttonBackground" candidateClass="FUIButton"/>
-                <relationship kind="outlet" name="settingsLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>

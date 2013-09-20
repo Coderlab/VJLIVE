@@ -42,8 +42,7 @@
 }
 
 - (IBAction)changeBackgroundColour:(id)sender{
-    NSLog(@"%@",currentImage );
-  //  backogrund = self.view.backgroundColor;
+    
     if([currentImage isEqualToString:@"moon"]){
             [buttonBackground setImage:[UIImage imageNamed:@"sun"] forState:UIControlStateNormal];
         currentImage =@"sun";
