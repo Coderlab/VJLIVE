@@ -84,7 +84,6 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     chie=0;
     animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
-    pushBehavior= [[UIPushBehavior alloc]initWithItems:@[scalette] mode:UIPushBehaviorModeInstantaneous];
     
     //Riconosce lo slide delle dita che muove la vista delle canzoni
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
@@ -116,6 +115,10 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     tapGestureTimesx.numberOfTapsRequired = 1;
     [_labelTimeVideoSx addGestureRecognizer:tapGestureTimesx];
     
+    UITapGestureRecognizer *tapGestureMediaPickerSx =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
+    tapGestureMediaPickerSx.numberOfTapsRequired = 1;
+    [_bottone addGestureRecognizer:tapGestureMediaPickerSx];
+    
     self.preloadedSx.titleLabel.font = [UIFont flatFontOfSize:18.0];
     self.addVideoSx.titleLabel.font = [UIFont flatFontOfSize:18.0];
     
@@ -139,7 +142,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
 
 -(IBAction)showMusic:(id)sender{
         __block CGPoint imageViewPosition = self.scalette.center;
-    if(imageViewPosition.y == 870){
+    if(imageViewPosition.y >= 870){
         [UIView animateWithDuration:0.35 animations:^{
           //  scalette.frame = CGRectMake(scalette.frame.origin.x,581 ,scalette.frame.size.width , scalette.frame.size.height);
             imageViewPosition= CGPointMake(scalette.center.x, 577+scalette.frame.size.height/2);
@@ -226,6 +229,12 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
             }else if (toccoTimeSx==0){
                 toccoTimeSx=1;
             }
+        }else if (sender.view == _bottone){
+            CGPoint point = [sender locationInView:sender.view];
+            coordinateX = point.x;
+            coordinateY = point.y;
+            NSLog(@"x = %f Y = %f",point.x,point.y);
+            [self showMediaPicker2:sender];
         }
     }
 }
@@ -249,11 +258,13 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
             self.titolo2.textColor = [UIColor belizeHoleColor];
             self.artista1.textColor = [UIColor belizeHoleColor];
             self.artista2.textColor = [UIColor belizeHoleColor];
+            self.scalette.backgroundColor = colore;
         } else {
             self.view.backgroundColor = [UIColor midnightBlueColor];
             self.separatorView.backgroundColor = colore;
             self.labelTempoSx.textColor = [UIColor blackColor];
             self.labelTempoDx.textColor = [UIColor blackColor];
+            self.scalette.backgroundColor = [UIColor midnightBlueColor];
             self.titolo1.textColor = colore;
             self.titolo2.textColor = colore;
             self.artista1.textColor = colore;
@@ -333,21 +344,21 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         imageViewPosition.y = 688;
         su = 1;
     }
-    if(imageViewPosition.y >768){
-        imageViewPosition.y = 857;
+    if(imageViewPosition.y >767){
+        imageViewPosition.y = 959;
         su = 0;
     }
     
-    if (imageViewPosition.y < 688 ){
-        imageViewPosition.y = 688;
+    if (imageViewPosition.y < 577 ){
+        imageViewPosition.y = 577;
         su = 1;
     }
-    if (imageViewPosition.y > 857 ){
-        imageViewPosition.y = 857;
+    if (imageViewPosition.y > 959 ){
+        imageViewPosition.y = 959;
         su= 0;
     }
     NSLog(@"%f",imageViewPosition.y);
-    [UIView animateWithDuration:0.15 animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         self.scalette.center = imageViewPosition;
         
     }];
@@ -1053,13 +1064,10 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         popover = [[UIPopoverController alloc] initWithContentViewController:picker];
         
         if (self.view.window != nil){
-            if (su==1) {
-                [popover presentPopoverFromRect:CGRectMake(_bottone2.frame.origin.x, _bottone2.frame.origin.y+_bottone2.frame.size.height-111, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+                [popover presentPopoverFromRect:CGRectMake(_bottone2.frame.origin.x-3, _bottone2.frame.origin.y-92, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionRight animated:YES];
                 NSLog(@"%f e %f",_bottone2.frame.origin.x, _bottone2.frame.origin.y);
-            }else{
-                [popover presentPopoverFromRect:CGRectMake(_bottone2.frame.origin.x-150+(_bottone2.frame.size.width/2), _bottone2.frame.origin.y, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-                NSLog(@"%f e %f",_bottone2.frame.origin.x, _bottone2.frame.origin.y);
-            }
+            
         }
         
         
@@ -1071,13 +1079,12 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     
 }
-- (IBAction)showMediaPicker2:(id)sender
+- (void)showMediaPicker2:(id)sender
 {
     
     //Crea una media picker view
     picker2.delegate = self;
     [picker2 setAllowsPickingMultipleItems: NO];
-    picker2.prompt =
     //   NSLocalizedString (@"AGGIUNGI UNA CANZONE AL DECK DI SINISTRA","Prompt in media item picker");
     picker2.title = @"TITOLOSX";
     
@@ -1088,13 +1095,10 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         popover2 = [[UIPopoverController alloc] initWithContentViewController:picker2];
         
         if (self.view.window != nil){
-            if (su==1) {
-                [popover2 presentPopoverFromRect:CGRectMake(_bottone.frame.origin.x-275, _bottone.frame.origin.y-111+_bottone.frame.size.height, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+                [popover2 presentPopoverFromRect:CGRectMake(coordinateX-255, coordinateY-83, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
                 NSLog(@"%f e %f",_bottone.frame.origin.x, _bottone.frame.origin.y);
-            }else{
-                [popover2 presentPopoverFromRect:CGRectMake(_bottone.frame.origin.x-150+(_bottone.frame.size.width/2), _bottone.frame.origin.y, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-                NSLog(@"%f e %f",_bottone.frame.origin.x, _bottone.frame.origin.y);
-            }
+            
         }
         
         
@@ -1225,6 +1229,8 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     //stoppa la canzone
     [player stop];
+    [_pausaPlayCanzoneSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
+
     player.currentTime = 0;
     
 }
@@ -1232,6 +1238,8 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     //stoppa la canzone
     [player2 stop];
+    [_pausaPlayCanzoneDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
+
     player2.currentTime = 0;
     
 }

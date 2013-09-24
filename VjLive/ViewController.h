@@ -76,8 +76,8 @@
     MPMediaPickerController* picker2;
     MPMediaPickerController* picker;
     MPMediaPickerController* picker3;
-
-    UIPushBehavior *pushBehavior;
+    CGFloat coordinateX;
+    CGFloat coordinateY;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *questoSiDeveVedere;

@@ -95,7 +95,7 @@
 
     
     NSString* title = [item valueForProperty:MPMediaItemPropertyTitle];
-    
+
     NSNumber* durata = [item valueForProperty:MPMediaItemPropertyPlaybackDuration];
     float secondi =   [durata floatValue];
   int min = secondi/60;
@@ -114,9 +114,17 @@
     MPMediaItemArtwork *artWork = [item valueForProperty:MPMediaItemPropertyArtwork];
     
     cell.snapVideo.image = [artWork imageWithSize:CGSizeMake(120, 70)];
+
     
-    
-    
+    if ([[item valueForProperty:MPMediaItemPropertyIsCloudItem] boolValue]) {
+        cell.titoloVideo.textColor = [UIColor grayColor];
+        cell.durataVideo.textColor = [UIColor grayColor];
+        cell.artistaVideo.textColor = [UIColor grayColor];
+        cell.snapVideo.alpha = 0.5;
+        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.userInteractionEnabled = NO;
+
+    }
     
     return cell;
 }

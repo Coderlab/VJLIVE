@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad
 {
-    currentImage =@"sun";
+    currentImage =@"moon";
     [buttonBackground setButtonColor:[UIColor peterRiverColor]];
     UIImage *buttonImageSun = [UIImage imageNamed:currentImage];
     [buttonBackground setBounds:CGRectMake(0, 0, 50, 50)];
@@ -43,12 +43,12 @@
 
 - (IBAction)changeBackgroundColour:(id)sender{
     
-    if([currentImage isEqualToString:@"moon"]){
-            [buttonBackground setImage:[UIImage imageNamed:@"sun"] forState:UIControlStateNormal];
-        currentImage =@"sun";
-    }else{
+    if([currentImage isEqualToString:@"sun"]){
             [buttonBackground setImage:[UIImage imageNamed:@"moon"] forState:UIControlStateNormal];
         currentImage =@"moon";
+    }else{
+            [buttonBackground setImage:[UIImage imageNamed:@"sun"] forState:UIControlStateNormal];
+        currentImage =@"sun";
     }
     
     [_delegate changeColor:[UIColor whiteColor]];

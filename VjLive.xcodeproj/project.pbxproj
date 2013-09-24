@@ -63,13 +63,15 @@
 		7099BC2317E38AB6008E105D /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7099BC2217E38AB6008E105D /* CoreText.framework */; };
 		70AA548017B6E5060074A4DE /* FileSharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AA547F17B6E5060074A4DE /* FileSharingViewController.m */; };
 		70B84C1117C3DC440077178C /* ContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B84C1017C3DC440077178C /* ContainerController.m */; };
+		70C9A75417F1D16700596A57 /* sfondoPerHdmi.png in Resources */ = {isa = PBXBuildFile; fileRef = 70C9A75317F1D16700596A57 /* sfondoPerHdmi.png */; };
 		70D8BA7D17DD5EB900B2ABC6 /* thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70D8BA7B17DD5EB900B2ABC6 /* thumb@2x.png */; };
 		70D8BA7E17DD5EB900B2ABC6 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 70D8BA7C17DD5EB900B2ABC6 /* thumb.png */; };
 		70D9996E17DF3A4F00B1524A /* AppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 70D9996D17DF3A4F00B1524A /* AppIcon72x72.png */; };
 		70D9997017DF3A5C00B1524A /* AppIcon72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70D9996F17DF3A5B00B1524A /* AppIcon72x72@2x.png */; };
 		70DCFED717C9602E00B05FF9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DCFED617C9602E00B05FF9 /* AudioToolbox.framework */; };
-		70DCFEE217C96A7100B05FF9 /* WaveformImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCFEE117C96A7000B05FF9 /* WaveformImageView.m */; };
 		70F93BCD17B3B84E00EA5653 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F93BCC17B3B84E00EA5653 /* AssetsLibrary.framework */; };
+		70F9601317F1D3D20049A65E /* musica.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F9601117F1D3D20049A65E /* musica.png */; };
+		70F9601417F1D3D20049A65E /* musica@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F9601217F1D3D20049A65E /* musica@2x.png */; };
 		FA0B6FBE1737C04D00078572 /* avPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0B6FBD1737C04D00078572 /* avPlayer.m */; };
 		FA12FF55172B0D8900BE283B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA12FF54172B0D8900BE283B /* QuartzCore.framework */; };
 		FA12FF57172B0D8F00BE283B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA12FF56172B0D8F00BE283B /* CoreMedia.framework */; };
@@ -171,14 +173,15 @@
 		70AA547F17B6E5060074A4DE /* FileSharingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSharingViewController.m; sourceTree = "<group>"; };
 		70B84C0F17C3DC440077178C /* ContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerController.h; sourceTree = "<group>"; };
 		70B84C1017C3DC440077178C /* ContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerController.m; sourceTree = "<group>"; };
+		70C9A75317F1D16700596A57 /* sfondoPerHdmi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sfondoPerHdmi.png; sourceTree = "<group>"; };
 		70D8BA7B17DD5EB900B2ABC6 /* thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb@2x.png"; sourceTree = "<group>"; };
 		70D8BA7C17DD5EB900B2ABC6 /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
 		70D9996D17DF3A4F00B1524A /* AppIcon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon72x72.png; path = ../AppIcon72x72.png; sourceTree = "<group>"; };
 		70D9996F17DF3A5B00B1524A /* AppIcon72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon72x72@2x.png"; path = "../AppIcon72x72@2x.png"; sourceTree = "<group>"; };
 		70DCFED617C9602E00B05FF9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		70DCFEE017C96A7000B05FF9 /* WaveformImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaveformImageView.h; path = ../WaveformImageView.h; sourceTree = "<group>"; };
-		70DCFEE117C96A7000B05FF9 /* WaveformImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaveformImageView.m; path = ../WaveformImageView.m; sourceTree = "<group>"; };
 		70F93BCC17B3B84E00EA5653 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		70F9601117F1D3D20049A65E /* musica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musica.png; sourceTree = "<group>"; };
+		70F9601217F1D3D20049A65E /* musica@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "musica@2x.png"; sourceTree = "<group>"; };
 		FA0B6FBC1737C04D00078572 /* avPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avPlayer.h; sourceTree = "<group>"; };
 		FA0B6FBD1737C04D00078572 /* avPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = avPlayer.m; sourceTree = "<group>"; };
 		FA12FF54172B0D8900BE283B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -325,8 +328,6 @@
 				7099BBD617E38778008E105D /* Resources */,
 				FA4AA7E4172B030C00C5B3F3 /* AppDelegate.h */,
 				FA4AA7E5172B030C00C5B3F3 /* AppDelegate.m */,
-				70DCFEE017C96A7000B05FF9 /* WaveformImageView.h */,
-				70DCFEE117C96A7000B05FF9 /* WaveformImageView.m */,
 				FA4AA7ED172B030C00C5B3F3 /* MainStoryboard.storyboard */,
 				70B84C0F17C3DC440077178C /* ContainerController.h */,
 				70B84C1017C3DC440077178C /* ContainerController.m */,
@@ -352,6 +353,9 @@
 		FA4AA7DC172B030C00C5B3F3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70C9A75317F1D16700596A57 /* sfondoPerHdmi.png */,
+				70F9601117F1D3D20049A65E /* musica.png */,
+				70F9601217F1D3D20049A65E /* musica@2x.png */,
 				702E479E17E9F91B0035891A /* sun.png */,
 				702E479F17E9F91B0035891A /* moon.png */,
 				702E479C17E9CF3E0035891A /* gear.png */,
@@ -456,6 +460,7 @@
 				701B47AD17E318DF00EEFD15 /* slider_minimum.png in Resources */,
 				7099BBE117E38778008E105D /* Lato-Black.ttf in Resources */,
 				7099BBE217E38778008E105D /* Lato-BlackItalic.ttf in Resources */,
+				70C9A75417F1D16700596A57 /* sfondoPerHdmi.png in Resources */,
 				7099BBE317E38778008E105D /* Lato-Bold.ttf in Resources */,
 				7099BBE417E38778008E105D /* Lato-BoldItalic.ttf in Resources */,
 				7099BBE517E38778008E105D /* Lato-Hairline.ttf in Resources */,
@@ -463,6 +468,7 @@
 				7099BBE717E38778008E105D /* Lato-Italic.ttf in Resources */,
 				7099BBE817E38778008E105D /* Lato-Light.ttf in Resources */,
 				7099BBE917E38778008E105D /* Lato-LightItalic.ttf in Resources */,
+				70F9601417F1D3D20049A65E /* musica@2x.png in Resources */,
 				7099BBEA17E38778008E105D /* Lato-Regular.ttf in Resources */,
 				706F713317E3D35100F6D424 /* loop.png in Resources */,
 				706F713417E3D35100F6D424 /* loop@2x.png in Resources */,
@@ -476,6 +482,7 @@
 				706F713C17E3D35100F6D424 /* stop@2x.png in Resources */,
 				706F713D17E3D35100F6D424 /* volumeoff.png in Resources */,
 				706F713E17E3D35100F6D424 /* volumeoff@2x.png in Resources */,
+				70F9601317F1D3D20049A65E /* musica.png in Resources */,
 				706F713F17E3D35100F6D424 /* volumeon.png in Resources */,
 				706F714017E3D35100F6D424 /* volumeon@2x.png in Resources */,
 				702E479D17E9CF3E0035891A /* gear.png in Resources */,
@@ -518,7 +525,6 @@
 				70AA548017B6E5060074A4DE /* FileSharingViewController.m in Sources */,
 				70B84C1117C3DC440077178C /* ContainerController.m in Sources */,
 				7054B9A317C6174F00BA5483 /* selezionaVideoMusicaliController.m in Sources */,
-				70DCFEE217C96A7100B05FF9 /* WaveformImageView.m in Sources */,
 				70517B9917E92ED200ED2D7E /* settingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
