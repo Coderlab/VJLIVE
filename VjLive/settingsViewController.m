@@ -32,7 +32,7 @@
     [buttonBackground setBounds:CGRectMake(0, 0, 50, 50)];
     [buttonBackground setImage:buttonImageSun forState:UIControlStateNormal];
     [self.view setBackgroundColor:[UIColor peterRiverColor]];
-    volumeView = [[MPVolumeView alloc] initWithFrame: CGRectMake(25, 210, 300, 15)];
+    volumeView = [[MPVolumeView alloc] initWithFrame: CGRectMake(25, 210, self.view.frame.size.width/2, 15)];
     volumeView.showsVolumeSlider = YES;
 //    [volumeView sizeToFit];
     [self.view addSubview:volumeView];
@@ -42,14 +42,7 @@
 }
 
 - (IBAction)changeBackgroundColour:(id)sender{
-    
-    if([currentImage isEqualToString:@"sun"]){
-            [buttonBackground setImage:[UIImage imageNamed:@"moon"] forState:UIControlStateNormal];
-        currentImage =@"moon";
-    }else{
-            [buttonBackground setImage:[UIImage imageNamed:@"sun"] forState:UIControlStateNormal];
-        currentImage =@"sun";
-    }
+
     
     [_delegate changeColor:[UIColor whiteColor]];
     

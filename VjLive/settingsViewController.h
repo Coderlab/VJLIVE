@@ -23,6 +23,7 @@
 }
 @property (nonatomic,weak) id <settingsDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UILabel *settingsLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *switchNightMode;
 
 @property (weak, nonatomic) IBOutlet FUIButton *buttonBackground;
 - (IBAction)changeBackgroundColour:(id)sender;

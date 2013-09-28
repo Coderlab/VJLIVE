@@ -82,7 +82,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *questoSiDeveVedere;
 @property (weak,nonatomic) ContainerController * checkVC;
-@property (nonatomic) UIDynamicAnimator* animator;
 @property(nonatomic) CGPoint lastGestureVelocity;
 
 @property (weak, nonatomic) IBOutlet UISlider *timeSliderDx;

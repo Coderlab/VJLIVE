@@ -32,6 +32,7 @@
 		706F713E17E3D35100F6D424 /* volumeoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 706F713017E3D35100F6D424 /* volumeoff@2x.png */; };
 		706F713F17E3D35100F6D424 /* volumeon.png in Resources */ = {isa = PBXBuildFile; fileRef = 706F713117E3D35100F6D424 /* volumeon.png */; };
 		706F714017E3D35100F6D424 /* volumeon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 706F713217E3D35100F6D424 /* volumeon@2x.png */; };
+		7075ED8417F4608500957CA7 /* ExtendNSLogFunctionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 7075ED8317F4608500957CA7 /* ExtendNSLogFunctionality.m */; };
 		7099BBE117E38778008E105D /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099BBD717E38778008E105D /* Lato-Black.ttf */; };
 		7099BBE217E38778008E105D /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099BBD817E38778008E105D /* Lato-BlackItalic.ttf */; };
 		7099BBE317E38778008E105D /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7099BBD917E38778008E105D /* Lato-Bold.ttf */; };
@@ -121,6 +122,8 @@
 		706F713017E3D35100F6D424 /* volumeoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumeoff@2x.png"; sourceTree = "<group>"; };
 		706F713117E3D35100F6D424 /* volumeon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeon.png; sourceTree = "<group>"; };
 		706F713217E3D35100F6D424 /* volumeon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumeon@2x.png"; sourceTree = "<group>"; };
+		7075ED8217F4608500957CA7 /* ExtendNSLogFunctionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendNSLogFunctionality.h; sourceTree = "<group>"; };
+		7075ED8317F4608500957CA7 /* ExtendNSLogFunctionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendNSLogFunctionality.m; sourceTree = "<group>"; };
 		7099BBD717E38778008E105D /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		7099BBD817E38778008E105D /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		7099BBD917E38778008E105D /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				7054B9A217C6174F00BA5483 /* selezionaVideoMusicaliController.m */,
 				FA4AA7F0172B030C00C5B3F3 /* ViewController.h */,
 				FA4AA7F1172B030C00C5B3F3 /* ViewController.m */,
+				7075ED8217F4608500957CA7 /* ExtendNSLogFunctionality.h */,
+				7075ED8317F4608500957CA7 /* ExtendNSLogFunctionality.m */,
 				70517B9717E92ED200ED2D7E /* settingsViewController.h */,
 				70517B9817E92ED200ED2D7E /* settingsViewController.m */,
 				FA0B6FBC1737C04D00078572 /* avPlayer.h */,
@@ -517,6 +522,7 @@
 				7099BC1117E38A02008E105D /* UIFont+FlatUI.m in Sources */,
 				7099BC1217E38A02008E105D /* UITableViewCell+FlatUI.m in Sources */,
 				7007005417D3F46A0055A530 /* FXBlurView.m in Sources */,
+				7075ED8417F4608500957CA7 /* ExtendNSLogFunctionality.m in Sources */,
 				FA4AA7E2172B030C00C5B3F3 /* main.m in Sources */,
 				FA4AA7E6172B030C00C5B3F3 /* AppDelegate.m in Sources */,
 				FA4AA7F2172B030C00C5B3F3 /* ViewController.m in Sources */,

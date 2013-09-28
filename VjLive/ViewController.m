@@ -16,7 +16,7 @@
 
 static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPlayerDemoPlaybackViewControllerStatusObservationContext;
 @implementation ViewController
-@synthesize scalette,su,delegate,chie,sliderDurationSx,sliderDurationDx,segmentedTransizione,animator,lastGestureVelocity;
+@synthesize scalette,su,delegate,chie,sliderDurationSx,sliderDurationDx,segmentedTransizione,lastGestureVelocity;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -76,13 +76,16 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     [self.segmentedTransizione setSelectedColor:[UIColor peterRiverColor]];
     self.view.backgroundColor = [UIColor midnightBlueColor];
     
-    
+    self.stopSx.alpha = 1.0;
+    self.playDx.alpha = 1.0;
+    self.playSx.alpha = 1.0;
+    self.scalette.backgroundColor = [UIColor colorWithRed:0.74 green:0.76 blue:0.78 alpha:0.9];
     mutedx = 0;
     mutesx  = 0;
     loopdx =0;
     loopsx =0;
     chie=0;
-    animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    
     
     
     //Riconosce lo slide delle dita che muove la vista delle canzoni
@@ -118,13 +121,13 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     UITapGestureRecognizer *tapGestureMediaPickerSx =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
     tapGestureMediaPickerSx.numberOfTapsRequired = 1;
     [_bottone addGestureRecognizer:tapGestureMediaPickerSx];
-    
+    /*
     self.preloadedSx.titleLabel.font = [UIFont flatFontOfSize:18.0];
     self.addVideoSx.titleLabel.font = [UIFont flatFontOfSize:18.0];
     
-    self.preloadedDx.titleLabel.font = [UIFont flatFontOfSize:18.0];
+   self.preloadedDx.titleLabel.font = [UIFont flatFontOfSize:18.0];
     self.addVideoDx.titleLabel.font = [UIFont flatFontOfSize:18.0];
-    
+   */
     toccoTimeSx =0;
     toccoTimeDx =0;
     curFrameAlpha = self.checkVC.playerViewsx.frame;
@@ -141,12 +144,14 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
 }
 
 -(IBAction)showMusic:(id)sender{
-        __block CGPoint imageViewPosition = self.scalette.center;
+    __block CGPoint imageViewPosition = self.scalette.center;
     if(imageViewPosition.y >= 870){
-        [UIView animateWithDuration:0.35 animations:^{
-          //  scalette.frame = CGRectMake(scalette.frame.origin.x,581 ,scalette.frame.size.width , scalette.frame.size.height);
+        [UIView animateWithDuration:0.45 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            //  scalette.frame = CGRectMake(scalette.frame.origin.x,581 ,scalette.frame.size.width , scalette.frame.size.height);
             imageViewPosition= CGPointMake(scalette.center.x, 577+scalette.frame.size.height/2);
-            scalette.center = imageViewPosition;
+                        scalette.center = imageViewPosition;
+        } completion:^(BOOL finished){
+
         }];
     }else{
         [UIView animateWithDuration:0.35 animations:^{
@@ -251,7 +256,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         // No need to set a flag, just test the current colour.
         if ([self.view.backgroundColor isEqual:[UIColor midnightBlueColor]]) {
             self.view.backgroundColor = colore;
-            self.separatorView.backgroundColor = [UIColor midnightBlueColor];
+            self.separatorView.backgroundColor = [UIColor silverColor];
             self.labelTempoSx.textColor = colore;
             self.labelTempoDx.textColor = colore;
             self.titolo1.textColor = [UIColor belizeHoleColor];
@@ -261,10 +266,10 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
             self.scalette.backgroundColor = colore;
         } else {
             self.view.backgroundColor = [UIColor midnightBlueColor];
-            self.separatorView.backgroundColor = colore;
+            self.separatorView.backgroundColor = [UIColor silverColor];
             self.labelTempoSx.textColor = [UIColor blackColor];
             self.labelTempoDx.textColor = [UIColor blackColor];
-            self.scalette.backgroundColor = [UIColor midnightBlueColor];
+            self.scalette.backgroundColor = [UIColor silverColor];
             self.titolo1.textColor = colore;
             self.titolo2.textColor = colore;
             self.artista1.textColor = colore;
@@ -1064,9 +1069,9 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         popover = [[UIPopoverController alloc] initWithContentViewController:picker];
         
         if (self.view.window != nil){
-
-                [popover presentPopoverFromRect:CGRectMake(_bottone2.frame.origin.x-3, _bottone2.frame.origin.y-92, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionRight animated:YES];
-                NSLog(@"%f e %f",_bottone2.frame.origin.x, _bottone2.frame.origin.y);
+            
+            [popover presentPopoverFromRect:CGRectMake(_bottone2.frame.origin.x-3, _bottone2.frame.origin.y-92, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionRight animated:YES];
+            NSLog(@"%f e %f",_bottone2.frame.origin.x, _bottone2.frame.origin.y);
             
         }
         
@@ -1095,9 +1100,9 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         popover2 = [[UIPopoverController alloc] initWithContentViewController:picker2];
         
         if (self.view.window != nil){
-
-                [popover2 presentPopoverFromRect:CGRectMake(coordinateX-255, coordinateY-83, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
-                NSLog(@"%f e %f",_bottone.frame.origin.x, _bottone.frame.origin.y);
+            
+            [popover2 presentPopoverFromRect:CGRectMake(coordinateX-255, coordinateY-83, 300, 200) inView:scalette permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+            NSLog(@"%f e %f",_bottone.frame.origin.x, _bottone.frame.origin.y);
             
         }
         
@@ -1230,7 +1235,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     //stoppa la canzone
     [player stop];
     [_pausaPlayCanzoneSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
-
+    
     player.currentTime = 0;
     
 }
@@ -1239,7 +1244,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     //stoppa la canzone
     [player2 stop];
     [_pausaPlayCanzoneDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
-
+    
     player2.currentTime = 0;
     
 }
