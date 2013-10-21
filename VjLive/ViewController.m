@@ -20,8 +20,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.labelTempoDx setFont:[UIFont flatFontOfSize:35.0]];
-    [self.labelTempoSx setFont:[UIFont flatFontOfSize:35.0]];
+
     [self.artista1 setFont:[UIFont flatFontOfSize:15.0]];
     [self.artista2 setFont:[UIFont flatFontOfSize:15.0]];
     [self.titolo1 setFont:[UIFont flatFontOfSize:25.0]];
@@ -30,9 +29,16 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     [self.alphaChannelSlider configureFlatSliderWithTrackColor:[UIColor silverColor]
                                                  progressColor:[UIColor peterRiverColor]
                                                     thumbColor:[UIColor belizeHoleColor]];
+    [self.alphaChannelSlider setThumbImage:[UIImage imageNamed:@"slider_tab.png"] forState:UIControlStateNormal];
+    [self.alphaChannelSlider setThumbImage:[UIImage imageNamed:@"slider_tab.png"] forState:UIControlStateHighlighted];
+    [self.alphaChannelSlider setThumbImage:[UIImage imageNamed:@"slider_tab.png"] forState:UIControlStateSelected];
+    
     [self.volumeSliderAvplayer2 configureFlatSliderWithTrackColor:[UIColor silverColor]
                                                     progressColor:[UIColor peterRiverColor]
                                                        thumbColor:[UIColor belizeHoleColor]];
+    [self.volumeSliderAvplayer2 setThumbImage:[UIImage imageNamed:@"slider_tab_volume.png"] forState:UIControlStateNormal];
+    [self.volumeSliderAvplayer2 setThumbImage:[UIImage imageNamed:@"slider_tab_volume.png"] forState:UIControlStateHighlighted];
+    [self.volumeSliderAvplayer2 setThumbImage:[UIImage imageNamed:@"slider_tab_volume.png"] forState:UIControlStateSelected];
     [self.timeSliderDx configureFlatSliderWithTrackColor:[UIColor silverColor]
                                            progressColor:[UIColor peterRiverColor]
                                               thumbColor:[UIColor belizeHoleColor]];
@@ -42,9 +48,12 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     [self.sliderDx configureFlatSliderWithTrackColor:[UIColor silverColor]
                                        progressColor:[UIColor peterRiverColor]
                                           thumbColor:[UIColor belizeHoleColor]];
+
+    
     [self.sliderSx configureFlatSliderWithTrackColor:[UIColor silverColor]
                                        progressColor:[UIColor peterRiverColor]
                                           thumbColor:[UIColor belizeHoleColor]];
+    
     [self.sliderdx configureFlatSliderWithTrackColor:[UIColor silverColor]
                                        progressColor:[UIColor peterRiverColor]
                                           thumbColor:[UIColor belizeHoleColor]];
@@ -57,10 +66,14 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     [self.sliderDurationSx configureFlatSliderWithTrackColor:[UIColor silverColor]
                                                progressColor:[UIColor peterRiverColor]
                                                   thumbColor:[UIColor belizeHoleColor]];
+    [self.sliderdx setThumbImage:[UIImage imageNamed:@"slider_tab_volume.png"] forState:UIControlStateNormal];
+    [self.sliderdx setThumbImage:[UIImage imageNamed:@"slider_tab_volume.png"] forState:UIControlStateHighlighted];
+    [self.sliderdx setThumbImage:[UIImage imageNamed:@"slider_tab_volume.png"] forState:UIControlStateSelected];
+    [self.slidersx setThumbImage:[UIImage imageNamed:@"slider_tab_volume.png"] forState:UIControlStateNormal];
+    [self.slidersx setThumbImage:[UIImage imageNamed:@"slider_tab_volume.png"] forState:UIControlStateHighlighted];
+    [self.slidersx setThumbImage:[UIImage imageNamed:@"slider_tab_volume.png"] forState:UIControlStateSelected];
+
     
-    
-    //setto la variabile per far andare su e giu la vista "musica"
-    su=0;
     
     [self.loopDx setImage:[UIImage imageNamed:@"loop"] forState:UIControlStateHighlighted];
     [self.loopSx setImage:[UIImage imageNamed:@"loop"] forState:UIControlStateHighlighted];
@@ -121,13 +134,8 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     UITapGestureRecognizer *tapGestureMediaPickerSx =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
     tapGestureMediaPickerSx.numberOfTapsRequired = 1;
     [_bottone addGestureRecognizer:tapGestureMediaPickerSx];
-    /*
-    self.preloadedSx.titleLabel.font = [UIFont flatFontOfSize:18.0];
-    self.addVideoSx.titleLabel.font = [UIFont flatFontOfSize:18.0];
+
     
-   self.preloadedDx.titleLabel.font = [UIFont flatFontOfSize:18.0];
-    self.addVideoDx.titleLabel.font = [UIFont flatFontOfSize:18.0];
-   */
     toccoTimeSx =0;
     toccoTimeDx =0;
     curFrameAlpha = self.checkVC.playerViewsx.frame;
@@ -168,7 +176,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     [self controllaseceunoschermo];
     [self setUpScreenConnectionNotificationHandlers];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-    
+     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
 }
 -(void)controllaseceunoschermo{
@@ -182,21 +190,21 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         self.secondWindow.screen = secondScreen;
         //self.secondWindow.screen.wantsSoftwareDimming = YES;
         
-        
-        
+        //aggiungi la vista video al proiettore
         self.checkVC.view.frame = screenBounds;
-        //   [self.secondWindow addSubview:self.checkVC.vistaGrande];
+        [self.secondWindow addSubview:self.checkVC.view];
         
+        UIImageView *imageHolder = [[UIImageView alloc] initWithFrame:self.checkVC.view.frame];
+        UIImage *image = [UIImage imageNamed:@"sfondoPerHdmi.png"];
+        imageHolder.image = image;
+        [imageHolder sizeToFit];
+        [_questoSiDeveVedere addSubview:imageHolder];
         self.secondWindow.hidden = NO;
         [self.secondWindow setBackgroundColor:[UIColor blackColor]];
         self.checkVC.view.autoresizesSubviews = NO;
-        //[self.secondWindow addSubview:self.checkVC.vistaGrande];
         
         [self.secondWindow makeKeyAndVisible];
-        
-        
     }
-    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -264,6 +272,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
             self.artista1.textColor = [UIColor belizeHoleColor];
             self.artista2.textColor = [UIColor belizeHoleColor];
             self.scalette.backgroundColor = colore;
+             [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
         } else {
             self.view.backgroundColor = [UIColor midnightBlueColor];
             self.separatorView.backgroundColor = [UIColor silverColor];
@@ -274,6 +283,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
             self.titolo2.textColor = colore;
             self.artista1.textColor = colore;
             self.artista2.textColor = colore;
+             [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
         }
     }];
     
@@ -325,8 +335,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     if (self.secondWindow)
     {
         // Hide and then delete the window.
-        [[self.secondWindow subviews][0] removeFromSuperview];
-        
+        [[_questoSiDeveVedere subviews][0] removeFromSuperview];
         self.secondWindow.hidden = YES;
         self.secondWindow = nil;
         self.checkVC.view.frame = CGRectMake(148, 111, 728, 410);
@@ -558,7 +567,7 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
 }
 
-- (void)popOverItemSelected:(NSURL *)selectedItem{
+- (void)popOverItemSelected:(NSURL *)selectedItem titoloItem:(NSString*)titoloItem {
     
     //appena selezionato il video dismette la vista popover di selezione video
     [self.popSegue dismissPopoverAnimated:YES];
@@ -566,7 +575,10 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
     
     if (chie == 0){
         //Video di destra
-        
+
+          self.labelNomeVideoDx.adjustsFontSizeToFitWidth = YES;
+
+                self.labelNomeVideoDx.text = titoloItem;
         if([_playDx.titleLabel.text isEqualToString:@"Pause"]){
             [_playDx setTitle:@"Play" forState:UIControlStateNormal];
             [_playDx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];
@@ -592,7 +604,8 @@ static void *AVPlayerDemoPlaybackViewControllerStatusObservationContext = &AVPla
         [self setSlider];
         
     }else if(chie == 1){
-        
+                  self.labelNomeVideoSx.adjustsFontSizeToFitWidth = YES;
+                self.labelNomeVideoSx.text = titoloItem;
         if([_playSx.titleLabel.text isEqualToString:@"Pause"]){
             [_playSx setTitle:@"Play" forState:UIControlStateNormal];
             [_playSx setImage:[UIImage imageNamed:@"playpause"] forState:UIControlStateNormal];

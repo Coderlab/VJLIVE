@@ -14,7 +14,7 @@
 @protocol PopOverSelectionDelegate
 @optional
 
-- (void)popOverItemSelected:(NSURL *)selectedItem;
+- (void)popOverItemSelected:(NSURL *)selectedItem titoloItem:(NSString*)titoloItem;
 @end
 
 @interface selezionaVideoMusicaliController : UIViewController<MPMediaPickerControllerDelegate,UITableViewDelegate,UITableViewDataSource>{

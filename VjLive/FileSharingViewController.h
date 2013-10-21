@@ -16,7 +16,7 @@
 @protocol PopOverSelectionDelegate
 @optional
 
-- (void)popOverItemSelected:(NSURL *)selectedItem;
+- (void)popOverItemSelected:(NSURL *)selectedItem titoloItem:(NSString*)titoloItem;
 
 @end
 

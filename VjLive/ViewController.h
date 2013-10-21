@@ -133,6 +133,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelTempoSx;
 @property (weak, nonatomic) IBOutlet UILabel *labelTempoDx;
 @property (weak, nonatomic) IBOutlet UILabel *labelNomeVideoDx;
+@property (weak, nonatomic) IBOutlet UILabel *labelNomeVideoSx;
 @property (weak, nonatomic) IBOutlet FUIButton *preloadedSx;
 @property (weak, nonatomic) IBOutlet FUIButton *addVideoSx;
 @property (weak, nonatomic) IBOutlet FUIButton *preloadedDx;

@@ -162,7 +162,7 @@
 
     NSURL *url = [NSURL URLWithString:urlTextEscaped];
 
-    [self.delegate popOverItemSelected:url];
+    [self.delegate popOverItemSelected:url titoloItem:fileList[row]];
     
     
     

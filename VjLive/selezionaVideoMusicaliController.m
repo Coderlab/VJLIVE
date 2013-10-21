@@ -186,8 +186,8 @@
     
     
     _url = [item valueForProperty:MPMediaItemPropertyAssetURL];
-    
-    [self.delegate popOverItemSelected:_url];
+    NSString *titolo = [item valueForProperty:MPMediaItemPropertyTitle];
+    [self.delegate popOverItemSelected:_url titoloItem:titolo];
 
 }
 
